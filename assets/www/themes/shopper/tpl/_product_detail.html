@@ -1,0 +1,177 @@
+<script id="h_product_detail" type="text/x-handlebars-template">
+	{{#if last_category_visited}}
+		{{LeftPanelProducts this}}
+	{{/if}}
+	<div data-role="header" class="topbar">
+		{{#if last_category_visited}}
+			<a href="#products_left_panel" class="ui-btn ui-btn-left ui-icon-myicon ui-btn-icon-notext icon-menu">menu</a>
+		{{else}}
+			<a href="#" class="ui-btn ui-btn-left ui-icon-myicon ui-btn-icon-notext icon-back" data-rel="back">back</a>
+		{{/if}}
+		<a href="javascript:void(0);" onclick="app.search.redirectToSearchPage();" class="ui-btn ui-btn-left ui-icon-myicon ui-btn-icon-notext icon-search" data-role="button" role="button">Search</a>
+		<h1>{{{GetLanguageTranslation 'Product_Detail'}}}</h1>
+		<a href="javascript:app.home.redirectToIndexPage();" class="ui-btn ui-btn-right ui-icon-myicon ui-btn-icon-notext icon-home">home</a>
+		<div class="cart-buble">{{cart_bubble}}</div>
+		<a href="javascript:app.cart.redirectToCartPage();" class="ui-btn ui-btn-right ui-icon-myicon ui-btn-icon-notext icon-cart">cart</a>
+	</div>
+	<div data-role="main" class="ui-content">
+		<div class="main-box">
+			{{PageLoader}}
+			{{#ifEmptyObject product}}
+				{{#product}}
+					<div class="header2">
+						<strong>
+							{{{name}}}
+						</strong>
+					</div>
+					<div class="product-big-box">
+						<a href="javascript:void(0);" class="wishlist-btn ui-link wishlist_product {{#CheckProductInWishlish product_id}}active{{/CheckProductInWishlish}}" data-href="{{product_id}}"></a>
+						<div class="product-big-swiper swiper-container">
+							<div class="swiper-wrapper">
+								{{#if product_images}}
+									{{#product_images}}
+										<div class="swiper-slide">
+											<div class="product-big-image" style="background-image:url('{{full_image_url}}');">
+												<img src="../{{EchoThemeFolderName}}/images/thumb_800.png" alt="{{label}}">
+											</div>
+										</div>
+									{{/product_images}}
+								{{/if}}
+							</div>
+						</div>
+						<div class="product-thumb">
+							<div class=" swiper-container">
+								<div class="swiper-wrapper">
+									{{#if product_images}}
+										{{#product_images}}
+											<div class="swiper-slide">				
+												<span class="thumb" style="background-image:url('{{full_image_url}}');">
+													<img src="../{{EchoThemeFolderName}}/images/thumb_60.png" alt="{{label}}">
+												</span>
+											</div>
+										{{/product_images}}
+									{{/if}}
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="product-detail-text">
+						<h2 class="color-primary">
+							<span class="in-head">
+								{{#ifInArray type 'bundle,grouped'}}
+									{{#ifCond type '==' 'bundle'}}
+										{{FormatPrice min_price}} - {{FormatPrice max_price}}
+									{{/ifCond}}
+
+									{{#ifCond type '==' 'grouped'}}
+										{{FormatPrice min_price}}
+									{{/ifCond}}
+								{{else}}
+									{{#if special_price}}
+										{{#ifCond special_price '!=' price}}
+											<span class="text-cancel color-error">{{FormatPrice price}}</span>
+											{{FormatPrice special_price}}
+										{{else}}
+											{{FormatPrice price}}
+										{{/ifCond}}
+									{{else}}
+										{{FormatPrice price}}
+									{{/if}}
+								{{/ifInArray}}
+							</span>
+		                  	<div class="rating">
+		                  		<div class="right">
+		                  			{{#ProductStar rating_star }}
+									{{/ProductStar}}
+
+									{{#ProductStar blank_star 'empty'}}
+									{{/ProductStar}}
+		                  		</div>
+		                  		<div class="color-light">
+		                  			<span>{{{reviews}}} {{{GetLanguageTranslation 'Viewers'}}}</span>
+		                  		</div>
+		                    </div>
+		                    <div class=" clear"></div>
+		                </h2>
+						<div class="product_detail_description">
+							<b>{{{short_description}}}</b>
+							<br />
+							{{{description}}}
+						</div>
+						{{#CheckMagentoOptionsEmpty options}}
+							<div class="from">{{ProductDetailOptionsForm this}}</div>
+						{{/CheckMagentoOptionsEmpty}}
+					</div>
+				{{/product}}
+			{{/ifEmptyObject}}
+		</div>
+	</div>
+	<div data-role="footer" data-position="fixed">
+		<div class="footer-button">
+			{{#ifEmptyObject product}}
+				{{#product}}
+					<a href="javascript:void(0);" class="ui-btn ui-btn-c" onclick="app.cart.addToCart('{{product_id}}', '1')">{{{GetLanguageTranslation 'Buy_Now'}}}</a>
+					<a href="javascript:void(0);" class="ui-btn ui-btn-a" onclick="app.wishlist.addToWishlist('{{product_id}}', '1');" data-href="{{product_id}}">{{{GetLanguageTranslation 'Add_To_Wishlist'}}}</a>
+				{{/product}}
+			{{/ifEmptyObject}}
+		</div>
+	</div>
+	<script type="text/javascript">
+		var active_page_object = app.functions.get_active_page_object();
+		var active_page_id = $(active_page_object).attr('id');
+		var screenheight_home = $(window).height();
+		// panel height
+		$(active_page_object).find("#products_left_panel").height(screenheight_home);
+
+		var panel_menu = $(active_page_object).find(".panel-menu").height();
+		var panel_breadcrumb = $(active_page_object).find(".panel-breadcrumb").height();
+		var panel_load_more = 44;//$(".mobi-showmore").height();
+
+		//$(active_page_object).find("#products_left_panel .panel-product").height(screenheight_home - panel_menu - panel_breadcrumb - panel_load_more );
+		//$(active_page_object).find("#products_left_panel .panel-product-scroll").height(screenheight_home);
+		//$(active_page_object).find("#products_left_panel #left_panel_products_single_list").height(screenheight_home - 80);
+		$(active_page_object).find("#products_left_panel .panel-product-scroll-inner").height(screenheight_home  - panel_menu - panel_breadcrumb );
+
+		init_product_detail_swiper();
+		
+		$(active_page_object).one("pageshow",function() {
+			init_product_detail_swiper();
+		});
+
+		$(active_page_object).one("pagehide",function() {
+			init_product_detail_swiper();
+		});
+
+		function init_product_detail_swiper()
+		{
+			var mySwiper = new Swiper('#'+active_page_id+' .home-banner .swiper-container',{
+				pagination: '.pagination',
+				calculateHeight:true,
+				autoResize:true,
+				loop:true,
+				grabCursor: true,
+				paginationClickable: true
+			});
+			// Product big image
+
+			//Init Navigation
+			var nav = $(active_page_object).find('.product-thumb .swiper-container').swiper({
+				slidesPerView: 'auto',
+				freeMode:true,
+				freeModeFluid:true,
+				onSlideClick: function(nav){
+					pages.swipeTo( nav.clickedSlideIndex )
+				}
+			});
+			//Init Pages
+			var pages = $(active_page_object).find('.product-big-swiper').swiper({
+				calculateHeight:true,
+				autoResize:true,
+				resizeReInit:true
+			});
+			setTimeout(function(){
+			    $(active_page_object).find(".product-big-box").css("opacity", "1");
+			}, 50);
+		}
+	</script>
+</script>

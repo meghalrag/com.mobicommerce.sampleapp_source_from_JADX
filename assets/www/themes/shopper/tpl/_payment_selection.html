@@ -1,0 +1,23 @@
+<script id="h_payment_selection" type="text/x-handlebars-template">
+	<div data-role="header" class="topbar" >
+    	<a href="#" class="ui-btn ui-btn-left ui-icon-myicon ui-btn-icon-notext icon-back" data-rel="back">back</a>
+    	<h1>{{{GetLanguageTranslation 'Payment_Method'}}}</h1>
+        <a href="javascript:app.home.redirectToIndexPage();" class="ui-btn ui-btn-right ui-icon-myicon ui-btn-icon-notext icon-home">home</a>
+    </div>
+    <div data-role="main" class="ui-content">
+    	<div class="main-box">
+            {{PageLoader}}
+    		<div>
+    			<form onsubmit="return false;">
+    				<fieldset data-role="controlgroup">
+
+    					<legend>{{{GetLanguageTranslation 'Select_payment_method'}}}</legend>
+    					{{PaymentMethods this}}
+    					
+    				</fieldset>
+    				<a href="javascript:app.checkout.payment.save_method();" class="ui-btn ui-btn-c">{{{GetLanguageTranslation 'Continue'}}}</a>
+    			</form>
+    		</div>
+    	</div>
+    </div>
+</script>

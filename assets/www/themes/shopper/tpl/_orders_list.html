@@ -1,0 +1,25 @@
+<script id="h_orders_list" type="text/x-handlebars-template">
+	<ul  class="list-00 shopping-cart-list orderhistory-list">
+		{{#ifEmptyObject orders}}
+			{{#each orders}}
+				<li>
+               		<a href="javascript:void(0);" class="icon-arow" onclick="app.redirectFunction('order_detail.html?order_id={{entity_id}}');">
+               			<div class="product-detail">
+                      		<h4>{{increment_id}}</h4>
+                      		<p class="color-light">{{ConvertDateFormat created_at}}</p>
+                      		<p class="cost-line">
+                      			<span class="color-warning">{{FormatPrice grand_total}}</span>
+                      			<br>
+                        		<span>{{status}}</span>
+                        	</p>
+                    	</div>
+                    </a>
+				</li>
+			{{/each}}
+		{{else}}
+			<li class="no-product-page no-product-icon">
+				<div>{{{GetLanguageTranslation 'We_are_sorry_No_orders_found'}}}</div>
+			</li>
+		{{/ifEmptyObject}}
+	</ul>
+</script>

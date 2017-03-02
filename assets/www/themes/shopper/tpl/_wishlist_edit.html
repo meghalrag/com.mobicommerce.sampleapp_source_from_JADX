@@ -1,0 +1,334 @@
+<script id="h_wishlist_edit" type="text/x-handlebars-template">
+	{{LeftPanelProducts this}}
+	<div data-role="header" class="topbar">
+		<a href="#" class="ui-btn ui-btn-left ui-icon-myicon ui-btn-icon-notext icon-back" data-rel="back">back</a>
+		<h1>{{{GetLanguageTranslation 'Wishlist'}}}</h1>
+		<a href="javascript:app.home.redirectToIndexPage();" class="ui-btn ui-btn-right ui-icon-myicon ui-btn-icon-notext icon-home">home</a>
+		<div class="cart-buble">{{cart_bubble}}</div>
+		<a href="javascript:app.cart.redirectToCartPage();" class="ui-btn ui-btn-right ui-icon-myicon ui-btn-icon-notext icon-cart">cart</a>
+	</div>
+	<div data-role="main" class="ui-content">
+		<div class="main-box">
+			{{PageLoader}}
+			{{#ifEmptyObject wishlist_item.product_Data.data.product_details}}
+				{{#wishlist_item.product_Data.data.product_details}}
+					<div class="header2">
+						<strong>
+							{{{name}}}
+						</strong>
+					</div>
+					<div class="product-big-box">
+						<a href="javascript:void(0);" class="wishlist-btn ui-link wishlist_product {{#CheckProductInWishlish product_id}}active{{/CheckProductInWishlish}}" data-href="{{product_id}}"></a>
+						<div class="product-big-swiper swiper-container">
+							<div class="swiper-wrapper">
+								{{#if product_images}}
+									{{#product_images}}
+										<div class="swiper-slide">
+											<div class="product-big-image" style="background-image:url('{{full_image_url}}');">
+												<img src="../{{EchoThemeFolderName}}/images/thumb_800.png" alt="{{label}}">
+											</div>
+										</div>
+									{{/product_images}}
+								{{/if}}
+							</div>
+						</div>
+						<div class="product-thumb">
+							<div class=" swiper-container">
+								<div class="swiper-wrapper">
+									{{#if product_images}}
+										{{#product_images}}
+											<div class="swiper-slide">				
+												<span class="thumb" style="background-image:url('{{full_image_url}}');">
+													<img src="../{{EchoThemeFolderName}}/images/thumb_60.png" alt="{{label}}">
+												</span>
+											</div>
+										{{/product_images}}
+									{{/if}}
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="product-detail-text">
+						<h2 class="color-primary">
+							<span class="in-head">
+								{{#ifInArray type 'bundle,grouped'}}
+									{{#ifCond type '==' 'bundle'}}
+										{{FormatPrice min_price}} - {{FormatPrice max_price}}
+									{{/ifCond}}
+
+									{{#ifCond type '==' 'grouped'}}
+										{{FormatPrice min_price}}
+									{{/ifCond}}
+								{{else}}
+									{{#if special_price}}
+										{{#ifCond special_price '!=' price}}
+											<span class="text-cancel color-error">{{FormatPrice price}}</span>
+											{{FormatPrice special_price}}
+										{{else}}
+											{{FormatPrice price}}
+										{{/ifCond}}
+									{{else}}
+										{{FormatPrice price}}
+									{{/if}}
+								{{/ifInArray}}
+							</span>
+		                  	<div class="rating">
+		                  		<div class="right">
+		                  			{{#ProductStar rating_star }}
+									{{/ProductStar}}
+
+									{{#ProductStar blank_star 'empty'}}
+									{{/ProductStar}}
+		                  		</div>
+		                  		<div class="color-light">
+		                  			<span>{{{reviews}}} {{{GetLanguageTranslation 'Viewers'}}}</span>
+		                  		</div>
+		                    </div>
+		                    <div class=" clear"></div>
+		                </h2>
+						<div class="product_detail_description">
+							<b>{{{short_description}}}</b>
+							<br />
+							{{{description}}}
+						</div>
+						{{#CheckMagentoOptionsEmpty options}}
+							<div class="from">{{ProductDetailOptionsForm this}}</div>
+						{{/CheckMagentoOptionsEmpty}}
+					</div>
+				{{/wishlist_item.product_Data.data.product_details}}
+			{{/ifEmptyObject}}
+		</div>
+		<div id="hidden_product_options" style="display:none!important">
+			<div id="hidden_super_attributes">
+				{{#if wishlist_item.wihlist_options.info_buyRequest.super_attribute}}
+					{{#each wishlist_item.wihlist_options.info_buyRequest.super_attribute}}
+						{{@key}}:{{this}}-,-
+					{{/each}}
+				{{/if}}
+			</div>
+
+			<div id="hidden_bundle_options">
+				{{#if wishlist_item.wihlist_options.info_buyRequest.bundle_option}}
+					{{#each wishlist_item.wihlist_options.info_buyRequest.bundle_option}}
+						{{@key}}:{{this}}-,-
+					{{/each}}
+				{{/if}}
+			</div>
+
+			<div id="hidden_bundle_qty">
+				{{#if wishlist_item.wihlist_options.info_buyRequest.bundle_option_qty}}
+					{{#each wishlist_item.wihlist_options.info_buyRequest.bundle_option_qty}}
+						{{@key}}:{{this}}-,-
+					{{/each}}
+				{{/if}}
+			</div>
+
+			<div id="hidden_group_qty">
+				{{#if wishlist_item.wihlist_options.info_buyRequest.super_group}}
+					{{#each wishlist_item.wihlist_options.info_buyRequest.super_group}}
+						{{@key}}:{{this}}-,-
+					{{/each}}
+				{{/if}}
+			</div>
+
+			<div id="hidden_simple_options">
+				{{#if wishlist_item.wihlist_options.info_buyRequest.options}}
+					{{#each wishlist_item.wihlist_options.info_buyRequest.options}}
+						{{@key}}:{{this}}-,-
+					{{/each}}
+				{{/if}}
+			</div>
+		</div>
+	</div>
+	<div data-role="footer" data-position="fixed">
+		<div class="footer-button">
+			{{#ifEmptyObject wishlist_item.product_Data.data.product_details}}
+				{{#wishlist_item.product_Data.data.product_details}}
+					<a href="javascript:void(0);" class="ui-btn ui-btn-c" onclick="app.wishlist.addToCart('{{../../wishlist_item.wishlist_item_id}}', '{{FormatInteger ../../wishlist_item.qty}}')">{{{GetLanguageTranslation 'Buy_Now'}}}</a>
+					<a href="javascript:void(0);" class="ui-btn ui-btn-a" onclick="app.wishlist.edit.updateWishlistItem('{{../../wishlist_item.wishlist_item_id}}', '{{../../wishlist_item.product_id}}', '{{FormatInteger ../../wishlist_item.qty}}');">{{{GetLanguageTranslation 'Update_Wishlist'}}}</a>
+				{{/wishlist_item.product_Data.data.product_details}}
+			{{/ifEmptyObject}}
+		</div>
+	</div>
+	<script type="text/javascript">
+		var active_page_object = app.functions.get_active_page_object();
+		var active_page_id = $(active_page_object).attr('id');
+
+		/* wishlist custom option to select on page load */
+		select_wishlist_options();
+		/* wishlist custom option to select on page load - upto here */
+
+		var screenheight_home = $(window).height();
+		// panel height
+		$(active_page_object).find("#products_left_panel").height(screenheight_home);
+
+		var panel_menu = $(active_page_object).find(".panel-menu").height();
+		var panel_breadcrumb = $(active_page_object).find(".panel-breadcrumb").height();
+		var panel_load_more = 44;//$(".mobi-showmore").height();
+
+		$(active_page_object).find("#products_left_panel .panel-product-scroll-inner").height(screenheight_home  - panel_menu - panel_breadcrumb );
+
+		init_product_detail_swiper();
+		
+		$(active_page_object).one("pageshow",function() {
+			init_product_detail_swiper();
+		});
+
+		$(active_page_object).one("pagehide",function() {
+			init_product_detail_swiper();
+		});
+
+		function init_product_detail_swiper()
+		{
+			var mySwiper = new Swiper('#'+active_page_id+' .home-banner .swiper-container',{
+				pagination: '.pagination',
+				calculateHeight:true,
+				autoResize:true,
+				loop:true,
+				grabCursor: true,
+				paginationClickable: true
+			});
+			// Product big image
+
+			//Init Navigation
+			var nav = $(active_page_object).find('.product-thumb .swiper-container').swiper({
+				slidesPerView: 'auto',
+				freeMode:true,
+				freeModeFluid:true,
+				onSlideClick: function(nav){
+					pages.swipeTo( nav.clickedSlideIndex )
+				}
+			});
+			//Init Pages
+			var pages = $(active_page_object).find('.product-big-swiper').swiper({
+				calculateHeight:true,
+				autoResize:true,
+				resizeReInit:true
+			});
+			setTimeout(function(){
+			    $(active_page_object).find(".product-big-box").css("opacity", "1");
+			}, 50);
+		}
+
+		function select_wishlist_options(){
+			/* wishlist custom option to select on page load */
+			// for configurable products
+			var wishlist_super_attributes = $.trim($(active_page_object).find('#hidden_super_attributes').html());
+			if(wishlist_super_attributes != ''){
+				wishlist_super_attributes = wishlist_super_attributes.split('-,-');
+				if(wishlist_super_attributes.length > 0){
+					$(wishlist_super_attributes).each(function(wsa_key, wsa_value){
+						if(wsa_value != ''){
+							wsa_value = wsa_value.split(':');
+							if(wsa_value.length == 2){
+								if($(active_page_object).find('select.product_super_attributes[for='+wsa_value[0]+']').length > 0){
+									var select_all_options = wsa_value[1].split(',');
+									if(select_all_options.length > 0){
+										$(select_all_options).each(function(sao_key, sao_val){
+											if($(active_page_object).find("select.product_super_attributes[for="+wsa_value[0]+"] option[value='"+sao_val+"']").length > 0){
+												$(active_page_object).find("select.product_super_attributes[for="+wsa_value[0]+"] option[value='"+sao_val+"']").attr('selected', 'selected');
+											}
+										});
+									}
+								}
+							}
+						}
+					});
+				}
+			}
+			// for configurable products - upto here
+
+			//for bundle products
+			var wishlist_bundle_options = $.trim($(active_page_object).find('#hidden_bundle_options').html());
+			if(wishlist_bundle_options != ''){
+				wishlist_bundle_options = wishlist_bundle_options.split('-,-');
+				if(wishlist_bundle_options.length > 0){
+					$(wishlist_bundle_options).each(function(wbo_key, wbo_value){
+						if(wbo_value != ''){
+							wbo_value = wbo_value.split(':');
+							if(wbo_value.length == 2){
+								if($(active_page_object).find('select.product_bundle_attributes[for='+wbo_value[0]+']').length > 0){
+									var select_all_options = wbo_value[1].split(',');
+									if(select_all_options.length > 0){
+										$(select_all_options).each(function(sao_key, sao_val){
+											if($(active_page_object).find("select.product_bundle_attributes[for="+wbo_value[0]+"] option[value='"+sao_val+"']").length > 0){
+												$(active_page_object).find("select.product_bundle_attributes[for="+wbo_value[0]+"] option[value='"+sao_val+"']").attr('selected', 'selected');
+											}
+										});
+									}
+								}
+							}
+						}
+					});
+				}
+			}
+			var wishlist_bundle_qty = $.trim($(active_page_object).find('#hidden_bundle_qty').html());
+			if(wishlist_bundle_qty != ''){
+				wishlist_bundle_qty = wishlist_bundle_qty.split('-,-');
+				if(wishlist_bundle_qty.length > 0){
+					$(wishlist_bundle_qty).each(function(wbq_key, wbq_value){
+						if(wbq_value != ''){
+							wbq_value = wbq_value.split(':');
+							if(wbq_value.length == 2){
+								if($(active_page_object).find('input.bundle_product_qty_'+wbq_value[0]).length > 0){
+									$(active_page_object).find('input.bundle_product_qty_'+wbq_value[0]).val(wbq_value[1]);
+								}
+							}
+						}
+					});
+				}
+			}
+			//for bundle products - upto here
+
+			//for grouped products
+			var wishlist_group_qty = $.trim($(active_page_object).find('#hidden_group_qty').html());
+			if(wishlist_group_qty != ''){
+				wishlist_group_qty = wishlist_group_qty.split('-,-');
+				if(wishlist_group_qty.length > 0){
+					$(wishlist_group_qty).each(function(wgq_key, wgq_value){
+						if(wgq_value != ''){
+							wgq_value = wgq_value.split(':');
+							if(wgq_value.length == 2){
+								if($(active_page_object).find('input.product_group_attributes[for='+wgq_value[0]+']').length > 0){
+									$(active_page_object).find('input.product_group_attributes[for='+wgq_value[0]+']').val(wgq_value[1]);
+								}
+							}
+						}
+					});
+				}
+			}
+			//for grouped products - upto here
+
+			//for simple products
+			var wishlist_simple_options = $.trim($(active_page_object).find('#hidden_simple_options').html());
+			if(wishlist_simple_options != ''){
+				wishlist_simple_options = wishlist_simple_options.split('-,-');
+				if(wishlist_simple_options.length > 0){
+					$(wishlist_simple_options).each(function(wso_key, wso_value){
+						if(wso_value != ''){
+							wso_value = wso_value.split(':');
+							if(wso_value.length == 2){
+								if($(active_page_object).find('input.product_options[for='+wso_value[0]+']').length > 0){
+									$(active_page_object).find('input.product_options[for='+wso_value[0]+']').val(wso_value[1]);
+								}
+
+								if($(active_page_object).find('select.product_options[for='+wso_value[0]+']').length > 0){
+									var select_all_options = wso_value[1].split(',');
+									if(select_all_options.length > 0){
+										$(select_all_options).each(function(sao_key, sao_val){
+											if($(active_page_object).find("select.product_options[for="+wso_value[0]+"] option[value='"+sao_val+"']").length > 0){
+												$(active_page_object).find("select.product_options[for="+wso_value[0]+"] option[value='"+sao_val+"']").attr('selected', 'selected');
+											}
+										});
+									}
+								}
+							}
+						}
+					});
+				}
+			}
+			//for simple products - upto here
+			/* wishlist custom option to select on page load - upto here */
+		}
+	</script>
+</script>

@@ -1,0 +1,11 @@
+<script id="h_agreements" type="text/x-handlebars-template">
+	{{#if agreements}}
+		{{#ifEmptyObject agreements}}
+			<h3>Agreements</h3>
+			{{#each agreements}}
+				<input type="checkbox" name="name" class="agreement_checkbox" id="agreement_{{agreement_id}}" value="{{agreement_id}}" >
+	    		<label for="agreement_{{agreement_id}}">{{checkbox_text}}</label>
+			{{/each}}
+		{{/ifEmptyObject}}
+	{{/if}}
+</script>

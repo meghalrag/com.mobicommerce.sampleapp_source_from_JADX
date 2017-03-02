@@ -1,0 +1,12 @@
+<script id="h_product_list_nav_append" type="text/x-handlebars-template">
+	{{#category_products}}
+		<li>
+			<a href="javascript:void(0);" onclick="app.redirectFunction('product_detail.html?product_id={{entity_id}}');">
+				<div class="panel-product-image" style="background-image:url('{{product_image_url}}');">
+					<img src="../{{EchoThemeFolderName}}/images/product_list_image.png" alt="thumb">
+				</div>
+				<span> {{name}}</span>
+			</a>
+		</li>
+	{{/category_products}}
+</script>

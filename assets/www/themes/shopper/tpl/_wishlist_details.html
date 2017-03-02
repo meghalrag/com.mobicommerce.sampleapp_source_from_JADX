@@ -1,0 +1,49 @@
+<script id="h_wishlist_details" type="text/x-handlebars-template">
+	{{#ifEmptyObject wishlist_items}}
+		<ul class="list-00 shopping-cart-list whis-list">
+			{{#wishlist_items}}
+				<li>
+					<div class="product-image" style="background-image:url('{{product_Data.data.product_details.product_thumbnail_url}}')">
+						<img src="../{{EchoThemeFolderName}}/images/product_list_image.png">
+					</div>
+					<div class="product-detail">
+						<h4>{{{product_Data.data.product_details.name}}}</h4>
+						<!--
+						{{#if options_Data}}
+							{{#ifEmptyObject options_Data}}
+								<div>
+									{{#each options_Data}}
+										<p>{{{option_title}}}: {{{option_value}}}{{#if @last}}{{else}},{{/if}}</p>
+									{{/each}}
+								</div>
+							{{/ifEmptyObject}}
+						{{/if}}
+						-->
+						<p class="cost-line">
+							<span class="color-warning">{{FormatPrice price}}</span>
+						</p>
+						<div class="rating">
+							{{#ProductStar product_Data.data.product_details.rating_star }}
+							{{/ProductStar}}
+
+							{{#ProductStar product_Data.data.product_details.blank_star 'empty'}}
+							{{/ProductStar}}
+							<span class="color-light">{{{product_Data.data.product_details.reviews}}}</span>
+						</div>
+
+						<div>
+							<a href="javascript:void(0);" class="ui-btn ui-btn-inline ui-btn-c" onclick="app.wishlist.addToCart('{{wishlist_item_id}}', '{{FormatInteger qty}}');">{{{GetLanguageTranslation 'Add_to_cart'}}}</a>
+							<a href="javascript:void(0);" class="ui-btn ui-btn-inline ui-btn-b" onclick="app.redirectFunction('wishlist_edit.html?item_id={{wishlist_item_id}}');">{{{GetLanguageTranslation 'Edit'}}}</a>
+                            <a href="javascript:void(0);" class="ui-btn ui-btn-inline ui-btn-b" onclick="app.wishlist.removeFromWishlist('{{wishlist_item_id}}');">{{{GetLanguageTranslation 'Remove'}}}</a>		
+						</div>
+
+					</div>
+				</li>
+			{{/wishlist_items}}
+		</ul>
+	{{else}}
+		<div class="no-product-page no-cart-icon">
+			<div>{{{GetLanguageTranslation 'No_wishlist_items_found'}}}</div>
+		</div>
+	{{/ifEmptyObject}}
+</script>

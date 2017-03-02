@@ -1,0 +1,20 @@
+<script id="h_cart" type="text/x-handlebars-template">
+	<div data-role="header" class="topbar" >
+		<a href="#" class="ui-btn ui-btn-left ui-icon-myicon ui-btn-icon-notext icon-back" data-rel="back">back</a>
+		<a href="javascript:void(0);" onclick="app.search.redirectToSearchPage();" class="ui-btn ui-btn-left ui-icon-myicon ui-btn-icon-notext icon-search" data-role="button" role="button">Search</a>
+		<h1>{{{GetLanguageTranslation 'Shopping_Cart'}}}</h1>
+		{{#if cart_bubble}}
+			{{#ifCond cart_errors '==' 0}}
+				<a href="javascript:void(0);" onclick="javascript:app.user.cart_check_login();" class="ui-btn ui-btn-right ">{{{GetLanguageTranslation 'Checkout'}}}</a>
+			{{/ifCond}}
+		{{/if}}
+	</div>
+	<div data-role="main" class="ui-content">
+		<div class="main-box">
+			{{PageLoader}}
+			<div>
+				{{CartDetails this}}
+			</div>
+		</div>
+	</div>
+</script>

@@ -1,0 +1,11 @@
+<script id="h_group_product_options" type="text/x-handlebars-template">
+	{{#ifEmptyObject super_group}}
+		{{#super_group}}
+			<label for="{{option_id}}" class="select">
+				{{{option_title}}}
+				<em>*</em>
+			</label>
+			<input type="text" class="dynamic_options product_group_attributes type_text" name="{{{option_title}}}" placeholder="Quantity" for="{{option_id}}" />
+		{{/super_group}}
+	{{/ifEmptyObject}}
+</script>

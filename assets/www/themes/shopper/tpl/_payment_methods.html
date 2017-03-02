@@ -1,0 +1,8 @@
+<script id="h_payment_methods" type="text/x-handlebars-template">
+	{{#if payment_methods}}
+		{{#each payment_methods}}
+			<input type="radio" name="paymentmethod" id="{{code}}" value="{{code}}" >
+    		<label for="{{code}}">{{title}}</label>
+		{{/each}}
+	{{/if}}
+</script>

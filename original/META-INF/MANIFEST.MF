@@ -1,0 +1,785 @@
+Manifest-Version: 1.0
+Created-By: 1.0 (Android)
+
+Name: assets/www/themes/shopper/images/banner4.jpg
+SHA1-Digest: W/AeJ1FLvpDwfdwheqmNxqWj4L0=
+
+Name: assets/www/themes/shopper/checkout_payment_selection.html
+SHA1-Digest: tgUSBjOZC6LWVk8zd8ILx0SHLjY=
+
+Name: res/xml/config.xml
+SHA1-Digest: E6V3vsltqjZDVlcHU4LewpmNlXc=
+
+Name: assets/www/themes/shopper/tpl/_left_panel_products.html
+SHA1-Digest: BTuWtW8ETIqgj5vl6MycgmL9KaE=
+
+Name: assets/www/js/resource/app.js
+SHA1-Digest: lYm51n10rV2UmC1apMJgUMs/nQc=
+
+Name: res/drawable-xhdpi/ic_action_next_item.png
+SHA1-Digest: NR4QrPwnbh+SEbVIapOw4Qetu0E=
+
+Name: assets/www/themes/shopper/images/icon-hearton.svg
+SHA1-Digest: uhrn7okKXNAZtXUSoA5wc7jmedU=
+
+Name: res/drawable-land-hdpi/screen.png
+SHA1-Digest: AsRz5VtrYNqmglR8n5vAboxvBXA=
+
+Name: res/drawable-mdpi/ic_action_previous_item.png
+SHA1-Digest: hQHJ4uWUXYR/W5HKEfkoL0otUKY=
+
+Name: assets/www/themes/shopper/category_list.html
+SHA1-Digest: L608QiCxVZPGO3tUHaUPmz/r9IA=
+
+Name: assets/www/themes/shopper/cart.html
+SHA1-Digest: 9+S65I0yWNT2DO5AOVtbgEDIwCM=
+
+Name: assets/www/plugins/org.apache.cordova.network-information/www/Co
+ nnection.js
+SHA1-Digest: MOzNQteYtQp3plMlbAPRtyCFE+k=
+
+Name: assets/www/themes/shopper/images/product_images/fpmtsh141076yell
+ ow-flippd-m-400x400-imadxfqwgakgfkgj.jpeg
+SHA1-Digest: cYQC+fan0rx9E4PXMBE3e68CKGg=
+
+Name: assets/www/themes/shopper/images/product_images/5984-vendee-fash
+ ion-400x400-imadrbn2ybkexwzj.jpeg
+SHA1-Digest: V7Yh+KpX+6rf7Sqlj2uVxp3sBKo=
+
+Name: assets/www/themes/shopper/checkout_payment_card_entry.html
+SHA1-Digest: YmqU6nj38kBXs9hx7g1+G0+OrZk=
+
+Name: assets/www/themes/shopper/css/theme1.css
+SHA1-Digest: k0vM690sffvkjIg/dAEgiOqh5Yw=
+
+Name: assets/www/themes/shopper/tpl/_user_module.html
+SHA1-Digest: LSgcimttc4E+GwBibC4aH3dvHNU=
+
+Name: res/drawable-xxhdpi/ic_action_remove.png
+SHA1-Digest: GbOqf2Yga6qVAxaA3ec35ac0Yio=
+
+Name: assets/www/themes/shopper/products.html
+SHA1-Digest: Jgmym9Y0kV6ly4JepH68Zpe8tj8=
+
+Name: assets/www/themes/shopper/tpl/_product_list_nav_append.html
+SHA1-Digest: 5XwuIz2AZk9PDfHQB8kepKRYLrw=
+
+Name: assets/www/themes/shopper/images/product_images/apple-iphone-5s-
+ 400x400-imadpppc9k3gzdjz.jpeg
+SHA1-Digest: dhEPJplyuj8LXhSrIRHlnY+pD3g=
+
+Name: assets/www/cordova.js
+SHA1-Digest: aAalvVwc0U/nc5X4y6C5Do1xrm8=
+
+Name: assets/www/themes/shopper/css/personalizer.css
+SHA1-Digest: 0jHFnpA5dDrZ2mwgLnOdezbnXSM=
+
+Name: assets/www/themes/shopper/images/thumb_60.png
+SHA1-Digest: Hmrf4rTA2JWmVhO2I/4NtttCJzA=
+
+Name: assets/www/js/paypal-mobile-js-helper.js
+SHA1-Digest: F8FMM5qPBO9jJV4Ka7IV2+GIEDo=
+
+Name: assets/www/themes/shopper/wishlist_edit.html
+SHA1-Digest: KvhbKtvUARWFRzruyxaWaM75fmY=
+
+Name: assets/www/themes/shopper/tpl/_cms_detail.html
+SHA1-Digest: YeS46ZwroqcoOj/d4nUw9bCPaMw=
+
+Name: assets/www/themes/shopper/images/icon-youtube.svg
+SHA1-Digest: 1Kf60o7AbRdIO9uzjMvcwpkpPso=
+
+Name: assets/www/themes/shopper/images/icon-signup.svg
+SHA1-Digest: LNpqTvUk0ISkEyIP6Y7g0P5oxS8=
+
+Name: assets/www/themes/shopper/tpl/category_home.html
+SHA1-Digest: pNGQGZI2yyFQVJX62aNNaitl1GA=
+
+Name: assets/www/themes/shopper/js/plugins/idangerous.swiper-2.0.min.j
+ s
+SHA1-Digest: DxJ/7D3SpumcspOaiZXqZ/xxLYk=
+
+Name: assets/www/themes/shopper/tpl/_shipping_method_selection.html
+SHA1-Digest: CLN+BF7A6CdVHE5/qQkxv2UMxt8=
+
+Name: assets/www/themes/shopper/css/colorpicker.css
+SHA1-Digest: lIciXqgA19Lq7W1NF3o0xaBtffw=
+
+Name: assets/www/themes/shopper/images/icon-sortby.svg
+SHA1-Digest: 7v3jB7Pt6alEu/vh9ugHfPhWVqs=
+
+Name: assets/www/themes/shopper/images/icon-menu - Copy.svg
+SHA1-Digest: rXp3FbMkfj6L65CJ4PfKTynNgLU=
+
+Name: assets/www/themes/shopper/images/icon-plus.svg
+SHA1-Digest: SmaBKulqEDpN5GN7hn2wTiwldoA=
+
+Name: assets/www/themes/shopper/css/idangerous.swiper.scrollbar.css
+SHA1-Digest: eMXyD9ASVxoowpvJdrKj4fAENxE=
+
+Name: assets/www/css/images/ajax-loader.gif
+SHA1-Digest: ltbUloECmOxvMlZKg8rg+EPt7qA=
+
+Name: lib/armeabi/libcardioDecider.so
+SHA1-Digest: 0t/7rOsxiH8yVcTyf+s+B9jqtAU=
+
+Name: assets/www/themes/shopper/tpl/_payment_methods.html
+SHA1-Digest: riEwMUpXBRBAiM0RLUVuF8cySp8=
+
+Name: assets/www/themes/shopper/images/icon-pinterest31.svg
+SHA1-Digest: lMxLrp0dpj/YAX2WnIqrLcAmptQ=
+
+Name: assets/www/themes/shopper/css/main_20_07_2014.css
+SHA1-Digest: PsCR4kUOZ3KZnJ40le4BiANLZbM=
+
+Name: assets/www/_cordova_ios.js
+SHA1-Digest: EMiAdRGv2121ZIH0kHvFeXkZSYc=
+
+Name: assets/www/plugins/de.appplant.cordova.plugin.email-composer/www
+ /email_composer.js
+SHA1-Digest: jMubUCHA7Zye/qbXSVduY9V5GMc=
+
+Name: assets/www/themes/shopper/tpl/_product_two_column.html
+SHA1-Digest: UXRhFo8KEibAbDOqLa1gddyaebU=
+
+Name: assets/www/themes/shopper/images/icon-profile.svg
+SHA1-Digest: 4yqKJXX6RRFR4dOrDoL9QccKXKE=
+
+Name: assets/www/themes/shopper/tpl/_order_detail.html
+SHA1-Digest: 1ibnOp5lfrnmvJJTTZTTM8MW250=
+
+Name: assets/www/cordova_plugins.js
+SHA1-Digest: o5Qpdhgcx5vPARcFrFg8IIaFVi8=
+
+Name: res/drawable-hdpi/ic_action_next_item.png
+SHA1-Digest: qB37IvvoMeEjuZF5lSzNL1atssw=
+
+Name: assets/www/themes/shopper/images/icon-minus-white.svg
+SHA1-Digest: LWpeOmARBFQCrVS7UHvVOpCepk8=
+
+Name: assets/www/themes/shopper/tpl/_cart_details.html
+SHA1-Digest: zkAyusipFOE2bMmIigHCV9CSvwI=
+
+Name: assets/www/themes/shopper/images/icon-plus-white.svg
+SHA1-Digest: QwUHws2n2u6ViniWdwBL1IASSg8=
+
+Name: assets/www/themes/shopper/images/icon-chevron-right.svg
+SHA1-Digest: x4gzKrxlS60zTeckhhDEuxeDrAY=
+
+Name: res/drawable-xhdpi/ic_action_remove.png
+SHA1-Digest: l5JGHVyNioatN5tnVH3EIvs4nRA=
+
+Name: assets/www/themes/shopper/images/product_images/zpfl050504-zaver
+ i-pearls-400x400-imadwymfanmb5p3q.jpeg
+SHA1-Digest: FSGDsFZyRSf68gEG3J+yIpdQT6E=
+
+Name: assets/www/themes/shopper/tpl/_signup.html
+SHA1-Digest: VrHDQ8t7JWkI8uITcYuxnwMqPv8=
+
+Name: assets/www/themes/shopper/images/icon-minus.svg
+SHA1-Digest: o7cJgqvGItiXYLUHBw9JDGVkiwo=
+
+Name: assets/www/plugins/nl.x-services.plugins.toast/test/tests.js
+SHA1-Digest: obq4n6na5Mpd5gxpzJJ4xeAqGXk=
+
+Name: assets/www/themes/shopper/search.html
+SHA1-Digest: U4w+Qyj05VwCtYkOTqVybVfaI20=
+
+Name: assets/www/themes/shopper/images/icon-login.svg
+SHA1-Digest: LfmiXbwHbGnzwEODxJWsXo6gDnQ=
+
+Name: assets/www/themes/shopper/images/product_images/fujifilm.jpeg
+SHA1-Digest: RDE28BRLLLECQnq2rSLe99R7d94=
+
+Name: assets/www/themes/shopper/res/icons/android/icon-72-hdpi.png
+SHA1-Digest: ehC/rawgKy/GeMkJKA19+40g4IM=
+
+Name: assets/www/themes/shopper/images/icon-cart.svg
+SHA1-Digest: 4hubjmeXd1jga4VVyGqXZAjlvJo=
+
+Name: res/drawable-mdpi/icon.png
+SHA1-Digest: 41TcK3ehvYO9DzhTaknlJ01mc1g=
+
+Name: assets/www/themes/shopper/images/icon-star-0.svg
+SHA1-Digest: FDm7cf2Pomd0qPMkplBd3RsM6+w=
+
+Name: assets/www/themes/shopper/tpl/_shipping_methods.html
+SHA1-Digest: mQoVgkA/t/CPzFsfoFgt7Ax4/2c=
+
+Name: assets/www/themes/shopper/res/splash/screen-hdpi-portrait.png
+SHA1-Digest: Akm0aMG0b11vnh9Ol/yLfV/KavM=
+
+Name: assets/www/themes/shopper/tpl/_order_review.html
+SHA1-Digest: zVAXHscIXKPGgSMMrJosm0NaaIA=
+
+Name: assets/www/themes/shopper/tpl/_wishlist.html
+SHA1-Digest: ImR4ZXQMc1nHHH8SBicb+GZOkBg=
+
+Name: assets/www/themes/shopper/images/product_images/cubix-hc-nexus-5
+ -hard-case-blk-400x400-imadr7zf87pgytuf.jpeg
+SHA1-Digest: slfMB15B8Ce8XN2Pk0zfZ3RduhI=
+
+Name: assets/www/themes/shopper/res/icons/android/icon-48-mdpi.png
+SHA1-Digest: UbohqZEVHKHO/BR4nieiGA1W3Ds=
+
+Name: assets/www/themes/shopper/images/product_images/fujifilm-thumb.j
+ peg
+SHA1-Digest: VyL2L00GsDIO/KbnDl/XC0RWLkI=
+
+Name: assets/www/themes/shopper/images/icon-grid.svg
+SHA1-Digest: 6FPKUfwursRUbUH4BRODlxsngMo=
+
+Name: assets/www/themes/shopper/order_success.html
+SHA1-Digest: mD6XHApGRt4tCnGmukaRveI5eic=
+
+Name: assets/www/plugins/org.apache.cordova.network-information/www/ne
+ twork.js
+SHA1-Digest: 3VN6jtRiCHrUun/oSwbrc1Ydojc=
+
+Name: assets/www/themes/shopper/tpl/_cart.html
+SHA1-Digest: nLHf4mLV1eFgTh/tM5ziAl6yDQs=
+
+Name: assets/www/themes/shopper/images/icon-bullets.svg
+SHA1-Digest: CW51D6h6qTPKfI4xbYz/VR2eIxQ=
+
+Name: assets/www/themes/shopper/tpl/_product_detail.html
+SHA1-Digest: jbG+MalS/ZMJ4XJuFZGp9w/JW/M=
+
+Name: assets/www/themes/shopper/css/main.css
+SHA1-Digest: 4z8hVuiAHg8NOf9ue8TZwtBqGj0=
+
+Name: res/drawable-hdpi/ic_action_remove.png
+SHA1-Digest: fJ8PTsrpYrWc6H7e3ctCsDSiaAY=
+
+Name: assets/www/js/plugins/jquery.mobile-1.4.4.min.js
+SHA1-Digest: gFoiR4eajsB9zm8asAQdCVHxfHY=
+
+Name: assets/www/themes/shopper/css/main theme1.css
+SHA1-Digest: uSQfZizv7FrBja9zG+2AvrqoYn4=
+
+Name: assets/www/themes/shopper/images/icon-home.svg
+SHA1-Digest: K2RBbCWUKza5GDjrSWcjEIpWzTY=
+
+Name: assets/www/themes/shopper/images/icon-filter.svg
+SHA1-Digest: KaZ/ulHDjQqocLbwRxi6xbmhALE=
+
+Name: assets/www/themes/shopper/tpl/_wishlist_details.html
+SHA1-Digest: XFY+nV0Vx4PRTDOmfHNwTWQBTm0=
+
+Name: lib/armeabi-v7a/libcardioDecider.so
+SHA1-Digest: ha+6dkCB68L/Lw8PWI4gCPAQvBc=
+
+Name: assets/www/themes/shopper/images/banner2.jpg
+SHA1-Digest: B1Mu7QOBwgz4oOOklxrgWxxwRuE=
+
+Name: assets/www/themes/shopper/images/thumb_50.png
+SHA1-Digest: DTO0wBU5RUSGH8LKl6LLhntZIVE=
+
+Name: assets/www/plugins/com.phonegap.plugins.PushPlugin/www/PushNotif
+ ication.js
+SHA1-Digest: gpV0sGnKp04n4jH4ZTxFScaP0Sk=
+
+Name: assets/www/themes/shopper/order_review.html
+SHA1-Digest: m+FHl7yuDkhXEBHDnL0Pbf9FDhs=
+
+Name: lib/armeabi-v7a/libopencv_imgproc.so
+SHA1-Digest: AWIvTXjbKdWLWG6r6d1P9tk5myc=
+
+Name: assets/www/themes/shopper/orders.html
+SHA1-Digest: JKy6jvdPopuDCZeKVWXr+9w0fOU=
+
+Name: assets/www/jquery.mobile-1.4.4.min.map
+SHA1-Digest: c3x76aR70YKwLpGGFMNIsj/+9Bg=
+
+Name: assets/www/themes/shopper/res/icons/android/icon-96-xhdpi.png
+SHA1-Digest: 0TGgN9q7rbyMJnOhg3rtu4jmzyM=
+
+Name: assets/www/themes/shopper/tpl/_billing_details.html
+SHA1-Digest: 6q+h3p0DeK1Ksbt1H2BwR5fmo1A=
+
+Name: assets/www/themes/shopper/css/theme1 - Copy.css
+SHA1-Digest: zBvmx5lg5d3Ts72aJrVu77MhPl8=
+
+Name: assets/www/themes/shopper/tpl/_group_product_options.html
+SHA1-Digest: 7WI77A9MUqunayCZzWJ6BAyuMjc=
+
+Name: assets/www/themes/shopper/tpl/_billing_form.html
+SHA1-Digest: namtTZuR3xI/qnU3SPuuyO342D0=
+
+Name: assets/www/themes/shopper/tpl/_wait.html
+SHA1-Digest: FoqOMBig5zXJXnZBPSQUP3f6hvw=
+
+Name: assets/www/themes/shopper/images/product_images/canon-eos-m-mirr
+ orless-400x400-imadg3yhnzjhx4tb.jpeg
+SHA1-Digest: p5Us1zAhMlFExt42SL+kI9Bj1hs=
+
+Name: assets/www/themes/shopper/images/icon-bullets.svg!
+SHA1-Digest: 2jmj7l5rSw0yVb/vlWAYkK/YBwk=
+
+Name: assets/www/icon.png
+SHA1-Digest: 04LrU846c8SEUXkJG4ivdKEaiCs=
+
+Name: assets/www/css/jquery.mobile-1.4.4.min.css
+SHA1-Digest: S2EkMaLdXKjDpMIojEoylpkhZGI=
+
+Name: assets/www/themes/shopper/tpl/_forgot_password.html
+SHA1-Digest: lbFUN8dqg0blIMBCGRpGl04gq2g=
+
+Name: res/drawable-land-mdpi/screen.png
+SHA1-Digest: AsRz5VtrYNqmglR8n5vAboxvBXA=
+
+Name: res/drawable-hdpi/icon.png
+SHA1-Digest: PAmQnW904kDObCvlSoKuOunGBMg=
+
+Name: assets/www/themes/shopper/res/splash/screen-hdpi-landscape.png
+SHA1-Digest: CEqHS91N/9mksMtezav4UCZdk6g=
+
+Name: assets/www/themes/shopper/images/product_images/1102-vendee-fash
+ ion-400x400-imadrfefmhd86nh6.jpeg
+SHA1-Digest: Gey21Ev6QPGM9FQwJLMzSZjEu6M=
+
+Name: assets/www/themes/shopper/images/product_images/canon-eos-1100d-
+ slr-400x400-imad37mqyhj8jyfq.jpeg
+SHA1-Digest: ewUkkc78boYn7eDdjpY8lC3T9a0=
+
+Name: assets/www/themes/shopper/images/icon-google115.svg
+SHA1-Digest: M4f1yabTevhoA7cAy8yC6my889g=
+
+Name: assets/www/themes/shopper/user_module.html
+SHA1-Digest: m9dSyy/1F3r3GGxb1xznL8d9ej8=
+
+Name: assets/www/themes/shopper/images/icon-envelope32.svg
+SHA1-Digest: swYEAkvi82PX7b+IDqVyBl56PvM=
+
+Name: assets/www/themes/shopper/images/product_images/a502-casio-400x4
+ 00-imadj7drhv9fg68m.jpeg
+SHA1-Digest: CtpvHOEsOlIg4Me22V+EN1cskVE=
+
+Name: assets/www/themes/shopper/login.html
+SHA1-Digest: dKtURh5txtpPHpkI7fkcuspIW58=
+
+Name: assets/www/themes/shopper/images/icon-heart.svg
+SHA1-Digest: 7RSCxXJAe5ZfNuapmlXeQWvXt1E=
+
+Name: assets/www/themes/shopper/images/product_images/th1790768-d-tomm
+ y-hilfiger-400x400-imadsmyauprrj5uz.jpeg
+SHA1-Digest: HrrVAUGoY5MRWRmF4MEDGC4Tejc=
+
+Name: assets/www/themes/shopper/images/product_images/fpmtsh141079blac
+ k-flippd-m-400x400-imadxgyfd82gmwwx.jpeg
+SHA1-Digest: 8DSqXdeloLbpeGbkCa93yLIZx3U=
+
+Name: res/drawable-hdpi/ic_action_previous_item.png
+SHA1-Digest: 22hOl4hxhbk+vXL5yh1q/sikcuo=
+
+Name: res/drawable-mdpi/ic_action_remove.png
+SHA1-Digest: nKigmEPh2ytFH29tSmzdel83ejA=
+
+Name: res/drawable-port-ldpi/screen.png
+SHA1-Digest: AsRz5VtrYNqmglR8n5vAboxvBXA=
+
+Name: assets/www/themes/shopper/images/icon-no-cart.svg
+SHA1-Digest: t+6ugmlQbTvKFb1MWvh8Zgu6fhw=
+
+Name: assets/www/themes/shopper/images/icon-info.svg
+SHA1-Digest: 5cOoSRLtWp1CvbP73VJXotj6Rk4=
+
+Name: assets/www/splash.png
+SHA1-Digest: AVWPgqafcHB7TZm2p/o7MqYCNK8=
+
+Name: assets/www/themes/shopper/css/_main.css
+SHA1-Digest: +Zq8st2uBhuK90+0NM4FxiIdtQk=
+
+Name: assets/www/themes/shopper/js/plugins/idangerous.swiper.scrollbar
+ -2.1.js
+SHA1-Digest: o+umJybekkAZ0fwg6hU30B8Zyqo=
+
+Name: assets/www/themes/shopper/tpl/_wishlist_edit.html
+SHA1-Digest: HxELP+LwbbSOgtM7qkbWpCjbFMc=
+
+Name: assets/www/themes/shopper/js/plugins/idangerous.swiper-2.1.min.j
+ s
+SHA1-Digest: nhhrRQXq7Fv2fA85vQsYNeGXSl0=
+
+Name: lib/armeabi-v7a/libcardioRecognizer.so
+SHA1-Digest: OHsRrUyk2At2qKf+dVGsXV7DeT0=
+
+Name: assets/www/css/idangerous.swiper.scrollbar.css
+SHA1-Digest: eMXyD9ASVxoowpvJdrKj4fAENxE=
+
+Name: lib/mips/libcardioDecider.so
+SHA1-Digest: u7rfwhfeOPVwnzms8U/uhrOZtGo=
+
+Name: res/drawable-land-xhdpi/screen.png
+SHA1-Digest: AsRz5VtrYNqmglR8n5vAboxvBXA=
+
+Name: assets/www/css/idangerous.swiper.css
+SHA1-Digest: gykQdCMso7cVD4iGEqxXUKNtU2k=
+
+Name: assets/www/themes/shopper/tpl/_product_options.html
+SHA1-Digest: YBW1nfx1aVhMfDDCMqbcphIOLig=
+
+Name: lib/armeabi-v7a/libopencv_core.so
+SHA1-Digest: KdWVbqYdMg5TaGOq4I8BWwa3VRc=
+
+Name: assets/_where-is-www.txt
+SHA1-Digest: avAF2z5NXxA7dhGqngRyQ0ETAG0=
+
+Name: assets/www/css/fonts/OpenSans-Regular.ttf
+SHA1-Digest: NWTtC1Nj31zyd8FuDGvtxaaCIX8=
+
+Name: assets/www/themes/shopper/res/splash/screen-mdpi-landscape.png
+SHA1-Digest: 4bbuTmYRxutjoyyRxHKCNhzmUz8=
+
+Name: assets/www/themes/shopper/tpl/_search.html
+SHA1-Digest: 24EWnuZKJE+CrUWubE23t5MPM5E=
+
+Name: assets/www/themes/shopper/res/splash/screen-ldpi-landscape.png
+SHA1-Digest: FF3CnK/8zLmqz0yqi7bxiNCqOX4=
+
+Name: assets/www/themes/shopper/css/main_12_07_2014.css
+SHA1-Digest: /+n0NLrVGcwSx7r1JP3W+oG/I00=
+
+Name: assets/www/plugins/org.apache.cordova.device/www/device.js
+SHA1-Digest: lLgl/B1gUbDzf7/jX04KMDDWE5E=
+
+Name: assets/www/css/fonts/opensans-regular.svg
+SHA1-Digest: f9u2rWlj/alnYus3XmNVCSQc+RY=
+
+Name: assets/www/themes/shopper/jquery.mobile-1.4.4.min.map
+SHA1-Digest: c3x76aR70YKwLpGGFMNIsj/+9Bg=
+
+Name: res/drawable-land-ldpi/screen.png
+SHA1-Digest: AsRz5VtrYNqmglR8n5vAboxvBXA=
+
+Name: assets/www/themes/shopper/images/icon-blog.svg
+SHA1-Digest: QeS2Yv4zZM7tzo/+mCdaHv7m1gQ=
+
+Name: assets/www/themes/shopper/tpl/_product_list_li.html
+SHA1-Digest: McqkaPTQHFff5UCSIXBAA5/NZa4=
+
+Name: assets/www/themes/shopper/images/icon-delete.svg
+SHA1-Digest: PwQYFUK9/vBf8eZRrlqrRk6rUNk=
+
+Name: assets/www/themes/shopper/images/icon-star.svg
+SHA1-Digest: 7IHF0qjdBn5BHepvmiCfewkU8sA=
+
+Name: assets/www/themes/shopper/tpl/_payment_selection.html
+SHA1-Digest: 9RfGCTmA2RZ/Oivo0H/dnNRVsjQ=
+
+Name: assets/www/themes/shopper/images/icon-like.svg
+SHA1-Digest: fJ733Si15znjvu+Fc8sClbSGJK8=
+
+Name: assets/www/themes/shopper/tpl/_cart_display_options.html
+SHA1-Digest: 9nUnbtCcGl+LP64IKEHTGqPfdaI=
+
+Name: assets/www/themes/shopper/tpl/_left_panel_products_single_view.h
+ tml
+SHA1-Digest: BA9l4+F25HdnB0R6hCItg07/pGM=
+
+Name: assets/www/themes/shopper/signup.html
+SHA1-Digest: mogT6I1NeK533P3/+JlKp4vem3o=
+
+Name: assets/www/themes/shopper/tpl/_payment_card_details.html
+SHA1-Digest: JB9R2SuG2uFfmIocUOhKgSg6PUQ=
+
+Name: assets/www/themes/shopper/images/ajax-loader.gif
+SHA1-Digest: srUZn3yVdn1gYrOn8+MQUxUb7qQ=
+
+Name: assets/www/css/index.css
+SHA1-Digest: Xn5KKnRg99sIQW5z0rf5zJjEDgI=
+
+Name: resources.arsc
+SHA1-Digest: PoqpE/kGCLAliC0bioPcJ7rgVuk=
+
+Name: assets/www/config.xml
+SHA1-Digest: MoQj4x3zo8Ez2qTyHWthgDMC4rw=
+
+Name: assets/www/css/fonts/OpenSans-Semibold.ttf
+SHA1-Digest: 8e56nG0T7i1kKoBsCec3J15hN5I=
+
+Name: AndroidManifest.xml
+SHA1-Digest: HWu1xPmMdYkAfnCDX3GCDa0EO0Y=
+
+Name: assets/www/img/logo.png
+SHA1-Digest: MW0GF0+VJyF3L6n2kH6NKUswUL0=
+
+Name: res/drawable-xxhdpi/icon.png
+SHA1-Digest: HCPeKlE7W9HAT4Ty8yM79icfiGc=
+
+Name: assets/www/themes/shopper/tpl/_search_list.html
+SHA1-Digest: jP7vwOsKGhIgLp40JUdaQzHxUoM=
+
+Name: assets/www/themes/shopper/cms_detail.html
+SHA1-Digest: TzWei8wDSGUXNHXS3uWwJ528yig=
+
+Name: assets/www/themes/shopper/product_detail.html
+SHA1-Digest: Z0ESRwWTryeoQUP5LVjNtSh1j1Y=
+
+Name: assets/www/themes/shopper/images/icon-back.svg
+SHA1-Digest: 8PWPmTb6SfbPdBdec95Wlf22sGg=
+
+Name: assets/www/images/ajax-loader.gif
+SHA1-Digest: ltbUloECmOxvMlZKg8rg+EPt7qA=
+
+Name: res/drawable-port-mdpi/screen.png
+SHA1-Digest: AsRz5VtrYNqmglR8n5vAboxvBXA=
+
+Name: assets/www/themes/shopper/tpl/_cms_module.html
+SHA1-Digest: qpTi9KwP6XbYr5kKrrpnfaOLsh8=
+
+Name: assets/www/themes/shopper/tpl/_order_success.html
+SHA1-Digest: dmaHn31WMgwH7RAaVrx03kkOP6Q=
+
+Name: assets/www/themes/shopper/tpl/_bundle_product_options.html
+SHA1-Digest: EAiEHchlOLQ1ApVxK9oNCSJbDXg=
+
+Name: assets/www/themes/shopper/tpl/_downloadable_product_options.html
+SHA1-Digest: jBh8fAgvQvu+fqni1fW5VRNsUnc=
+
+Name: classes.dex
+SHA1-Digest: FvSjJiUcF7wkGr5f+jYQJqyZOZ4=
+
+Name: assets/www/themes/shopper/images/icon-share.svg
+SHA1-Digest: QUBL14ppa/B/lwrvnKruqKfEXnE=
+
+Name: assets/www/themes/shopper/tpl/_category_list_li.html
+SHA1-Digest: 4vnw5uLotDmNP9Q2pgnNnTLU40M=
+
+Name: assets/www/themes/shopper/tpl/_product_list.html
+SHA1-Digest: qRTNhgSKDOeE08D2jFn5eT498NI=
+
+Name: assets/www/themes/shopper/images/list-arow.svg
+SHA1-Digest: AwNdHaYUDSfg1upQckz6tXL7hJ4=
+
+Name: res/drawable-port-hdpi/screen.png
+SHA1-Digest: AsRz5VtrYNqmglR8n5vAboxvBXA=
+
+Name: res/drawable/icon.png
+SHA1-Digest: 5qOjVli+3rWpZ4lMXeuCP/0RzGs=
+
+Name: assets/www/themes/shopper/images/icon-product.svg
+SHA1-Digest: GwoImHp+o96nhAJO3d2LspQkMGY=
+
+Name: assets/www/css/fonts/OpenSans-Light.ttf
+SHA1-Digest: QEQsGJVoGEtubCeiXWnxTZG2UDk=
+
+Name: assets/www/themes/shopper/tpl/_showmoreloader.html
+SHA1-Digest: AXl3FPvv4pgZgb/dggE8fY36Dj8=
+
+Name: assets/www/themes/shopper/images/icon-logout.svg
+SHA1-Digest: LNpqTvUk0ISkEyIP6Y7g0P5oxS8=
+
+Name: assets/www/themes/shopper/res/splash/screen-ldpi-portrait.png
+SHA1-Digest: BTKgHbzx3Tk7JuNkDQrYwQYwUrE=
+
+Name: assets/www/plugins/com.paypal.cordova.mobilesdk/www/cdv-plugin-p
+ aypal-mobile-sdk.js
+SHA1-Digest: ePDoGYZsqFL8ij4bi31aBm79TNA=
+
+Name: assets/www/themes/shopper/images/icon-wishlist.svg
+SHA1-Digest: IEZsusFFw7oLAttkEUPxeiAS0U8=
+
+Name: assets/www/themes/shopper/tpl/_agreements.html
+SHA1-Digest: aigWr/vFGUTQiE4TEyxOqTGTRk0=
+
+Name: assets/www/themes/shopper/images/icon-facebook51.svg
+SHA1-Digest: S+QycQAvd8Kk9UDU9wnhRh+/7HY=
+
+Name: assets/www/themes/shopper/tpl/_error.html
+SHA1-Digest: aAkm1/Hw1Tn6AQnc+pYtY/gRcUM=
+
+Name: res/drawable-xxhdpi/ic_action_previous_item.png
+SHA1-Digest: O6f3A1T4xOSQqVUldAFPWs1Ax2I=
+
+Name: assets/www/themes/shopper/images/icon-search.svg
+SHA1-Digest: XglROxQJRHcfurf9/2R8RltV7q0=
+
+Name: assets/www/themes/shopper/js/plugins/idangerous.swiper.scrollbar
+ -2.0.js
+SHA1-Digest: dSwy+2YIj4BD8nhhZCc5KTGakD4=
+
+Name: lib/armeabi-v7a/libcardioRecognizer_tegra2.so
+SHA1-Digest: DRQtxKk+sx7rZH72ByfchUYOwXg=
+
+Name: assets/www/themes/shopper/images/icon-menu.svg
+SHA1-Digest: 9gYtRW8VK97JzgCqHG14F2AZaeQ=
+
+Name: assets/www/themes/shopper/images/product_images/canon-powershot-
+ sx510-hs-400x400-imadsv8upjek5kgr.jpeg
+SHA1-Digest: beFupJiUdbPqKA7wnqKZYG29pHQ=
+
+Name: assets/www/themes/shopper/tpl/_simple_product_options.html
+SHA1-Digest: CQu10jw1H74UBObmH3uWphUKtRw=
+
+Name: assets/www/themes/shopper/tpl/_orders_list.html
+SHA1-Digest: Fnfc9bA0TzNKCR8Xlb0KYhtB2lc=
+
+Name: assets/www/themes/shopper/images/banner3.jpg
+SHA1-Digest: I2NjcaCQEa6UXTZ+U2x20L/A9Oo=
+
+Name: assets/www/themes/shopper/tpl/_product_one_column.html
+SHA1-Digest: 0izQ/5ee6liGj8ZZEJx5BrUFXpk=
+
+Name: lib/x86/libcardioDecider.so
+SHA1-Digest: bPxftPCycRs7iQdCyLIV6RjaOIQ=
+
+Name: res/drawable-ldpi/icon.png
+SHA1-Digest: sJSZX4eqwWNKDp61FjKla6rtDVY=
+
+Name: res/drawable-port-xhdpi/screen.png
+SHA1-Digest: AsRz5VtrYNqmglR8n5vAboxvBXA=
+
+Name: assets/www/themes/shopper/images/icon-home2.svg
+SHA1-Digest: 1yxSJaCUSHJQt8mW8+zopLOmy/w=
+
+Name: assets/www/themes/shopper/tpl/_category_home_left_panel.html
+SHA1-Digest: A0t/edcfk/+GG/ZVYacM4NVbgp8=
+
+Name: res/drawable-xhdpi/ic_action_previous_item.png
+SHA1-Digest: 0dsU8dFcc2mtwhzv/EDl6N0yNE0=
+
+Name: assets/www/themes/shopper/css/main_23_07_2014.css
+SHA1-Digest: JPfBVdivtTN2tfmAohrj0fOcTMI=
+
+Name: assets/www/js/plugins/jquery-2.1.1.min.js
+SHA1-Digest: r7kHUuCpDCS39yT6yobF89FdEXg=
+
+Name: assets/www/themes/shopper/res/icons/android/icon-36-ldpi.png
+SHA1-Digest: 9zJ1CVQv/88W1tNpeuvyeEkzafM=
+
+Name: assets/www/themes/shopper/images/product_images/nokia-lumia-525-
+ 400x400-imadsb47zd9t5gb6.jpeg
+SHA1-Digest: 9lhn9F8rcwHQcLUXwE/DgcXK/c8=
+
+Name: assets/www/plugins/nl.x-services.plugins.toast/www/Toast.js
+SHA1-Digest: 35PU2Uok5DkS/Kz9eFiiTN+6YJ8=
+
+Name: assets/www/themes/shopper/tpl/_configurable_product_options.html
+SHA1-Digest: nuJ0snzEqiUwm44JCjx1YGywC5I=
+
+Name: assets/www/themes/shopper/images/icon-call10.svg
+SHA1-Digest: 8VqAACRoOzji4HbcgKqvcls/fIA=
+
+Name: assets/www/themes/shopper/images/icon-orderhistory.svg
+SHA1-Digest: o/5lf1muYsfa+9YdyXUZcrSeOUs=
+
+Name: assets/www/js/plugins/taffy.js
+SHA1-Digest: YHzc57nP1hTUApzA9KiSibdqyEY=
+
+Name: assets/www/themes/shopper/checkout_shipping_method_selection.htm
+ l
+SHA1-Digest: I3IT2OUMvbT2GV3QfTDpL3W18cI=
+
+Name: assets/www/_cordova.js
+SHA1-Digest: bdiiIAhd9dUZFLP8y7Z0WJNhLuI=
+
+Name: assets/www/themes/shopper/images/icon-delete-white.svg
+SHA1-Digest: xrmKSgpNWT7aapIKVwmGW4EXcew=
+
+Name: assets/www/themes/shopper/images/thumb_800.png
+SHA1-Digest: FszPqQMkshDIR21L9PQMjNF0jm8=
+
+Name: assets/www/index.html
+SHA1-Digest: tsoJyPnBOhiBYXBYRWyPuTMoJ7o=
+
+Name: assets/www/themes/shopper/tpl/_shipping_form.html
+SHA1-Digest: quFjUrB2aNUTulh0I31xAGCBA5I=
+
+Name: assets/www/themes/shopper/res/splash/screen-mdpi-portrait.png
+SHA1-Digest: PdtdRXEBgSv8b3T6R5BeM7c855k=
+
+Name: assets/www/plugins/nl.x-services.plugins.socialsharing/www/Socia
+ lSharing.js
+SHA1-Digest: wOdG3BiYbwM/w9CYjRlhZ29N11k=
+
+Name: assets/www/themes/shopper/images/search-black.svg
+SHA1-Digest: RJjJ/UgiCH3n7DH0eM/WRkMdW/U=
+
+Name: assets/www/themes/shopper/tpl/_orders.html
+SHA1-Digest: 5x4ki6H0Rz/1gK1RvDAPmx/+3W0=
+
+Name: assets/www/themes/shopper/res/splash/screen-xhdpi-landscape.png
+SHA1-Digest: iPSf4ZhFvDVxiKami/X4iyc7Zs4=
+
+Name: assets/www/themes/shopper/checkout_billing_details.html
+SHA1-Digest: m4M7zQFJl1dxxUsyzwCu8/aTn4U=
+
+Name: assets/www/themes/shopper/res/splash/screen-xhdpi-portrait.png
+SHA1-Digest: t1o+jodaIFdqtjAHZM5ZQ7t+bjE=
+
+Name: assets/www/js/resource/mobi.js
+SHA1-Digest: GA/WSlcgDNAJpDla18C48e47r7s=
+
+Name: assets/www/css/fonts/opensans-regular.eot
+SHA1-Digest: 7sJJRrsZQcyvXmA7tpSTPVLgGew=
+
+Name: assets/www/themes/shopper/order_detail.html
+SHA1-Digest: vLb12OVB1CviUTJQTCnmAowIQ+o=
+
+Name: assets/www/themes/shopper/tpl/_login.html
+SHA1-Digest: tjj4qhJxCzELvRszvCxlra5xJ78=
+
+Name: assets/www/themes/shopper/images/product_images/jr1437-fossil-40
+ 0x400-imadr88hyd5wxh5a.jpeg
+SHA1-Digest: eiE+74rRcE8R067WvgkTmBmGyC8=
+
+Name: res/drawable-xhdpi/icon.png
+SHA1-Digest: HCPeKlE7W9HAT4Ty8yM79icfiGc=
+
+Name: assets/www/themes/shopper/cms_module.html
+SHA1-Digest: vFc0LxbVU0THkqKpMtX8XGSknKY=
+
+Name: assets/www/themes/shopper/tpl/_product_list_two_column_li.html
+SHA1-Digest: EpGjKb5z3TTYDfyv9DuQFdxE3Dc=
+
+Name: assets/www/themes/shopper/images/banner5.jpg
+SHA1-Digest: WaNRSHxqcCVUiLvK4E2Ayc7UIws=
+
+Name: assets/www/themes/shopper/images/product_images/cmp1115-core-pol
+ o-pq-a13-new-navy-converse-m-400x400-imadwyz7de4thvux.jpeg
+SHA1-Digest: seNo2hUkm1eoxiLWaEZ0uUGVpEY=
+
+Name: assets/www/themes/shopper/tpl/_pageloader.html
+SHA1-Digest: 7YC6EkU5iUjLIISHluPlNvyCH70=
+
+Name: assets/www/themes/shopper/images/banner1.jpg
+SHA1-Digest: Pz6uzjQk/Q6FzTe0GdRj0k/8e7E=
+
+Name: assets/www/js/plugins/handlebars-v1.3.0.js
+SHA1-Digest: 9XQPd1/A/xgJpoMwme2DsIls0JM=
+
+Name: assets/www/themes/shopper/images/product_list_image.png
+SHA1-Digest: yXYiZ7wucSxWoArbodJP+aRrc1s=
+
+Name: assets/www/themes/shopper/css/developer.css
+SHA1-Digest: ChO7EvF4z4lXMI2O5/D2wFn4W60=
+
+Name: assets/www/themes/shopper/wishlist.html
+SHA1-Digest: jvlTW42eiDeBI7PjParX7NK9ufI=
+
+Name: assets/www/themes/shopper/images/icon-twitter44.svg
+SHA1-Digest: CpmUSxHgwGaWQvwe49CPYrYCOfs=
+
+Name: assets/www/themes/shopper/css/idangerous.swiper.css
+SHA1-Digest: gykQdCMso7cVD4iGEqxXUKNtU2k=
+
+Name: assets/www/themes/shopper/forgot_password.html
+SHA1-Digest: ZwjGaGER89FdWGQFvBHLi5LmKvo=
+
+Name: assets/www/css/fonts/opensans-regular.woff
+SHA1-Digest: dB56NBXJ9ndS6+BnucRzUiCEgjA=
+
+Name: res/drawable-mdpi/ic_action_next_item.png
+SHA1-Digest: I11kR9J8D1ym6/6IDHX2g/nVzNc=
+
+Name: res/drawable-xxhdpi/ic_action_next_item.png
+SHA1-Digest: c25EZH3BjQyHSy++YinAPl3kQmE=
+
+Name: assets/www/plugins/org.apache.cordova.inappbrowser/www/inappbrow
+ ser.js
+SHA1-Digest: AWdbRwgpPBnl1rHRBIz1wQQtS60=
+
+Name: assets/www/themes/shopper/tpl/_category_list.html
+SHA1-Digest: WmoUEo6PlrQCz2qE0lcGjh9XHHU=
+

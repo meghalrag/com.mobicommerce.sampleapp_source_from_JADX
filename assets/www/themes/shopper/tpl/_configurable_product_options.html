@@ -1,0 +1,23 @@
+<script id="h_configurable_product_options" type="text/x-handlebars-template">
+	{{#if product_super_attributes}}
+		{{#each product_super_attributes}}
+			<label for="{{product_super_attribute_id}}" class="select">
+				{{{label}}}
+				<em>*</em>
+			</label>
+			<select class="dynamic_options required product_super_attributes" name="{{{label}}}" for="{{attribute_id}}" onchange="app.functions.configurable_dropdown_change(this, '{{@index}}');" index="{{@index}}">
+				<option value="">Choose an option</option>
+				{{#if prices}}
+					{{#prices}}
+						<option value="{{value_index}}" for="{{#if dependence_option_ids}}{{#dependence_option_ids}}dependence_option_{{this}}{{#if @last}}{{else}},{{/if}}{{/dependence_option_ids}}{{/if}}">
+							{{{label}}}
+							{{#if pricing_value}}
+								(+ {{FormatPrice pricing_value}})
+							{{/if}}
+						</option>
+					{{/prices}}
+				{{/if}}
+			</select>
+		{{/each}}
+	{{/if}}
+</script>

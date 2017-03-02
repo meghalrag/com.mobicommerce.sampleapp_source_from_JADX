@@ -1,0 +1,22 @@
+<script id="h_cart_display_options" type="text/x-handlebars-template">
+	{{#if options}}
+		{{#ifEmptyObject options}}
+			{{#ifCond product_type '==' 'bundle'}}
+				{{#options}}
+					<p class="color-light"><strong>{{{this.0.option_title}}}</strong></p>
+					<p class="color-light">
+						{{#each this}}
+							{{{option_value}}}{{#if @last}}{{else}},{{/if}}
+						{{/each}}
+					</p>
+				{{/options}}
+			{{else}}
+				{{#each options}}
+					<p class="color-light">
+						<strong>{{{option_title}}}:</strong> {{{option_value}}}{{#if @last}}{{else}},{{/if}}
+					</p>
+				{{/each}}
+			{{/ifCond}}
+		{{/ifEmptyObject}}
+	{{/if}}
+</script>

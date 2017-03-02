@@ -1,0 +1,15 @@
+<script id="h_category_list_li" type="text/x-handlebars-template">
+	{{#if categories}}
+		{{#ifEmptyObject categories}}
+			{{#categories}}
+				<li>
+					<a href="#" onclick="{{#if children}} app.category.goto_child_categories('{{category_id}}', 'none'); {{else}} app.category.goto_products('{{category_id}}'); {{/if}}">
+						{{name}}
+					</a>
+				</li>
+			{{/categories}}
+		{{/ifEmptyObject}}
+	{{else}}
+		<li><a href="javascript:void(0)">{{{GetLanguageTranslation 'Oops_There_are_no_categories_to_display'}}}</a></li>
+	{{/if}}
+</script>

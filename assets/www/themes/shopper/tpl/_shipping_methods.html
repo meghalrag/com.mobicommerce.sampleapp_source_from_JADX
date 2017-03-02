@@ -1,0 +1,11 @@
+<script id="h_shipping_methods" type="text/x-handlebars-template">
+	{{#if shipping_methods}}
+		{{#each shipping_methods}}
+			{{#ifCond carrier_index '==' 1}}
+				<h3>{{carrier_title}}</h3>
+			{{/ifCond}}
+			<input type="radio" name="shippingmethod" id="{{code}}" value="{{code}}" >
+    		<label for="{{code}}">{{method_title}} {{FormatPrice price}}</label>
+		{{/each}}
+	{{/if}}
+</script>

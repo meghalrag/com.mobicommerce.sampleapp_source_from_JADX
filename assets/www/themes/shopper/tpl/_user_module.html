@@ -1,0 +1,42 @@
+<script id="h_user_module" type="text/x-handlebars-template">
+	{{CategoryHomeLeftPanel this}}
+	<div data-role="header" class="topbar" >
+		<a href="#home_panel" class="ui-btn ui-icon-myicon ui-btn-icon-notext icon-menu">menu</a>
+		<h1>{{{GetLanguageTranslation 'User'}}}</h1>
+		<div class="cart-buble">{{cart_bubble}}</div>
+		<a href="javascript:app.home.redirectToIndexPage();" class="ui-btn ui-btn-right ui-icon-myicon ui-btn-icon-notext icon-home">home</a>
+		<a href="javascript:app.cart.redirectToCartPage();" class="ui-btn ui-btn-right ui-icon-myicon ui-btn-icon-notext icon-cart">cart</a>
+	</div>
+	<div data-role="main" class="ui-content">
+		<div class="main-box">
+			{{PageLoader}}
+
+			<section class="button-list">
+				<div class="detail-box no-border">
+					<div class="li-row">
+						<div>
+							<strong>{{{user_details.fullname}}}</strong>
+							<span class="small">{{{user_details.email}}}</span>
+						</div>
+					</div>
+				</div>
+				<div class="detail-box">
+					<a href="javascript:void(0);"  onclick="app.orders.redirectToOrdersPage();" class="li-row icon-orderhistory icon-arow">
+						<div class="with-icon"></div>
+						<div><strong>{{{GetLanguageTranslation 'Order_History'}}}</strong></div>
+					</a>
+					<a href="javascript:void(0);" onclick="app.wishlist.redirectToWishlistPage();" class="li-row icon-wishlist icon-arow">
+						<div class="with-icon"></div>
+						<div><strong>{{{GetLanguageTranslation 'Wishlist'}}}</strong></div>
+					</a>
+				</div>
+			</section>
+		</div>
+	</div>
+
+	<div data-role="footer" class="footer" data-position="fixed">
+		<div class="footer-button">
+			<a href="javascript:void(0);" onclick="app.user.logout();" class="ui-btn ui-btn-b full">{{{GetLanguageTranslation 'Logout'}}}</a>
+		</div>
+	</div>
+</script>

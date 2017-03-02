@@ -1,0 +1,111 @@
+<script id="h_cms_module" type="text/x-handlebars-template">
+	{{CategoryHomeLeftPanel this}}
+	<div data-role="header" class="topbar">
+		<a href="#home_panel" class="ui-btn ui-icon-myicon ui-btn-icon-notext icon-menu">menu</a>
+		<h1>{{{GetLanguageTranslation 'Info'}}}</h1>
+		<div class="cart-buble">{{cart_bubble}}</div>
+		<a href="javascript:app.home.redirectToIndexPage();" class="ui-btn ui-btn-right ui-icon-myicon ui-btn-icon-notext icon-home">home</a>
+		<a href="javascript:app.cart.redirectToCartPage();" class="ui-btn ui-btn-right ui-icon-myicon ui-btn-icon-notext icon-cart">cart</a>
+	</div>
+	<div data-role="main" class="ui-content">
+		<div class="main-box">
+			{{PageLoader}}
+			 <section class="button-list">
+        		<div class="detail-box no-border">
+          			<div class="li-row">
+            			<div>
+            				{{#if cmsdata.contact_information.company_name}}
+            					<h3 style="margin:0">{{{DecodeHTML cmsdata.contact_information.company_name}}}</h3>
+            				{{/if}}
+            				{{#if cmsdata.contact_information.company_address}}
+            					<span class="small">{{{DecodeHTML cmsdata.contact_information.company_address}}}</span>
+            				{{/if}}
+            			</div>
+          			</div>
+          			{{#if cmsdata.contact_information.phone_number}}
+	          			<a href="tel:{{cmsdata.contact_information.phone_number}}" class="li-row icon-phone">
+		          			<div class="with-icon"></div>
+		          			<div><strong>{{{DecodeHTML cmsdata.contact_information.phone_number}}}</strong></div>
+	          			</a>
+	          		{{/if}}
+	          		{{#if cmsdata.contact_information.email_address}}
+	          			<a href="mailto:{{cmsdata.contact_information.email_address}}" class="li-row  icon-mail">
+	          				<div class="with-icon"></div>
+	          				<div><strong>{{{DecodeHTML cmsdata.contact_information.email_address}}}</strong></div>
+	          			</a>
+	          		{{/if}}
+          		</div>
+
+          		{{#ifEmptyObject cmsdata.cms_pages}}
+        			<div class="detail-box">
+        				{{#each cmsdata.cms_pages}}
+        					{{#if active}}
+        						<a href="javascript:void(0);" class="li-row icon-arow" onclick="{{#ifCond link_to_external '==' 1}} app.functions.inappopen('{{page_url}}'); {{else}} app.redirectFunction('cms_detail.html?page_id={{@key}}'); {{/ifCond}}">
+			          				<div><strong>{{{DecodeHTML page_title}}}</strong></div>
+			          			</a>
+        					{{/if}}
+        				{{/each}}
+          			</div>
+          		{{/ifEmptyObject}}
+      		</section>
+		</div>
+	</div>
+
+	<div data-role="footer" data-position="fixed" class="footer social-footer">
+	  	<div class="swiper-container social-swiper">
+	    	<div class="swiper-wrapper">
+	      		<div class="swiper-slide">
+	      			{{#if cmsdata.social_media}}
+	      				{{#ifCond cmsdata.social_media.facebook '==' '1'}}
+		      				{{#if cmsdata.social_media.facebook_url}}
+		      					<a class="icon-social facebook" onclick="app.functions.inappopen('{{cmsdata.social_media.facebook_url}}');"></a>
+		      				{{/if}}
+		      			{{/ifCond}}
+		      			{{#ifCond cmsdata.social_media.twitter '==' '1'}}
+		      				{{#if cmsdata.social_media.twitter_url}}
+		      					<a class="icon-social twitter" onclick="app.functions.inappopen('{{cmsdata.social_media.twitter_url}}');"></a>
+		      				{{/if}}
+		      			{{/ifCond}}
+		      			{{#ifCond cmsdata.social_media.pinterest '==' '1'}}
+		      				{{#if cmsdata.social_media.pinterest_url}}
+		      					<a class="icon-social pinterest" onclick="app.functions.inappopen('{{cmsdata.social_media.pinterest_url}}');"></a>
+		      				{{/if}}
+		      			{{/ifCond}}
+		      			{{#ifCond cmsdata.social_media.googleplus '==' '1'}}
+		      				{{#if cmsdata.social_media.googleplus_url}}
+		      					<a class="icon-social gplus" onclick="app.functions.inappopen('{{cmsdata.social_media.googleplus_url}}');"></a>
+		      				{{/if}}
+		      			{{/ifCond}}
+		      			{{#ifCond cmsdata.social_media.youtube '==' '1'}}
+		      				{{#if cmsdata.social_media.youtube_url}}
+		      					<a class="icon-social youtube" onclick="app.functions.inappopen('{{cmsdata.social_media.youtube_url}}');"></a>
+		      				{{/if}}
+		      			{{/ifCond}}
+		      			{{#ifCond cmsdata.social_media.blog '==' '1'}}
+		      				{{#if cmsdata.social_media.blog_url}}
+		      					<a class="icon-social blog" onclick="app.functions.inappopen('{{cmsdata.social_media.blog_url}}');"></a>
+		      				{{/if}}
+		      			{{/ifCond}}
+	      			{{/if}}
+	      		</div>
+	    	</div>
+	  	</div>
+	</div>
+
+	<script type="text/javascript">
+		var active_page_object = app.functions.get_active_page_object();
+
+		var socialcount = $(active_page_object).find(".social-swiper .swiper-slide .icon-social").size();
+		var socialwidth = $(active_page_object).find(".social-swiper .swiper-slide .icon-social").outerWidth();
+			
+		socialwidth = (socialwidth * socialcount) + (socialcount * 10);
+					
+		$(active_page_object).find(".social-swiper .swiper-slide, .social-swiper .swiper-wrapper").width(socialwidth);
+		var socialswipe = new Swiper('#'+$(active_page_object).attr('id')+' .social-swiper',{
+    		scrollContainer: true,
+    		scrollbar: {
+      			container: '.swiper-scrollbar'
+    		}
+  		});
+	</script>
+</script>

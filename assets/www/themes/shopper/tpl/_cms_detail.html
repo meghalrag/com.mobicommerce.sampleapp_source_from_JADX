@@ -1,0 +1,26 @@
+<script id="h_cms_detail" type="text/x-handlebars-template">
+	<div data-role="header" class="topbar">
+		<a href="#" class="ui-btn ui-btn-left ui-icon-myicon ui-btn-icon-notext icon-back" data-rel="back">back</a>
+		<h1>{{{DecodeHTML cmspagedata.page_title}}}</h1>
+		<div class="cart-buble">{{cart_bubble}}</div>
+		<a href="javascript:app.home.redirectToIndexPage();" class="ui-btn ui-btn-right ui-icon-myicon ui-btn-icon-notext icon-home">home</a>
+		<a href="javascript:app.cart.redirectToCartPage();" class="ui-btn ui-btn-right ui-icon-myicon ui-btn-icon-notext icon-cart">cart</a>
+	</div>
+	<div data-role="main" class="ui-content">
+		<div class="main-box">
+			<section class="button-list">
+        		<div class="detail-box no-border">
+          			<div class="li-row">
+          				<div>
+							<h3 style="margin:0 0 5px">{{{DecodeHTML cmspagedata.page_title}}}</h3>
+							<p></p>
+							<div>
+							 	{{{DecodeHTML cmspagedata.page_content}}}
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+		</div>
+	</div>
+</script>

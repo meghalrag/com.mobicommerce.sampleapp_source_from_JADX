@@ -1,0 +1,50 @@
+<script id="h_product_list_li" type="text/x-handlebars-template">
+	{{#ifEmptyObject products}}
+		{{#each products}}
+			<li>
+				<a href="javascript:void(0);" onclick="app.redirectFunction('product_detail.html?product_id={{entity_id}}');">
+					<div class="product-image" style="background-image:url('{{#if product_small_image_url}}{{product_small_image_url}}{{else}}../{{EchoThemeFolderName}}/images/icon-product.svg{{/if}}');">
+						<img src="../{{EchoThemeFolderName}}/images/product_list_image.png">
+					</div>
+					<div class="product-detail">
+						<h4>{{{name}}}</h4>
+						<p class="cost-line">
+							<span class="color-warning">
+								{{#ifInArray type_id 'bundle,grouped'}}
+									{{#ifCond type_id '==' 'bundle'}}
+										{{FormatPrice min_price}} - {{FormatPrice max_price}}
+									{{/ifCond}}
+
+									{{#ifCond type_id '==' 'grouped'}}
+										{{FormatPrice min_price}}
+									{{/ifCond}}
+								{{else}}
+									{{#ifCond special_price '!=' price}}
+										<span class="line-through">{{FormatPrice price}}</span>
+										{{FormatPrice special_price}}
+									{{else}}
+										{{FormatPrice price}}
+									{{/ifCond}}
+								{{/ifInArray}}
+							</span>
+						</p>
+						<div class="rating">
+							{{#ProductStar rating_star }}
+							{{/ProductStar}}
+
+							{{#ProductStar blank_star 'empty'}}
+							{{/ProductStar}}
+
+							<span class="color-light">{{reviews}}</span>
+						</div>
+						<div class="wishlist-btn ui-link wishlist_product {{#CheckProductInWishlish entity_id}}active{{/CheckProductInWishlish}}" data-href="{{entity_id}}"></div>
+					</div>
+				</a>
+			</li>
+		{{/each}}
+	{{else}}
+		<li class="no-product-page no-product-icon">
+			<div>{{{GetLanguageTranslation 'We_are_sorry_No_products_found'}}}</div>
+		</li>
+	{{/ifEmptyObject}}
+</script>

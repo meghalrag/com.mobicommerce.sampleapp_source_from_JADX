@@ -1,0 +1,141 @@
+<script id="h_simple_product_options" type="text/x-handlebars-template">
+	{{#if product_options}}
+		{{#product_options}}
+		
+			{{#ifCond type '==' 'multiple'}}
+				<label for="select-choice-1" class="select">
+					{{{title}}}
+					{{#ifCond is_require '==' '1'}}<em>*</em>{{/ifCond}}
+				</label>
+				<select class="dynamic_options product_options {{#ifCond is_require '==' '1'}}required{{/ifCond}} type_multiple" name="{{{title}}}" for="{{option_id}}" multiple="multiple">
+					<option value="" disabled>{{title}}</option>
+					{{#ifEmptyObject options}}
+						{{#options}}
+							<option value="{{option_type_id}}">
+								{{{title}}}
+								{{#ifCond price '!=' 0}}
+									(+ {{FormatPrice price}})
+								{{/ifCond}}
+							</option>
+						{{/options}}
+					{{/ifEmptyObject}}
+				</select>
+			{{/ifCond}}
+
+			{{#ifCond type '==' 'drop_down'}}
+				<label for="select-choice-1" class="select">
+					{{{title}}}
+					{{#ifCond is_require '==' '1'}}<em>*</em>{{/ifCond}}
+				</label>
+				<select class="dynamic_options product_options {{#ifCond is_require '==' '1'}}required{{/ifCond}} type_drop_down" name="{{{title}}}" for="{{option_id}}">
+					<option value="" disabled>{{{title}}}</option>
+					{{#ifEmptyObject options}}
+						{{#options}}
+							<option value="{{option_type_id}}">
+								{{{title}}} 
+								{{#ifCond price '!=' 0}}
+									(+ {{FormatPrice price}})
+								{{/ifCond}}
+							</option>
+						{{/options}}
+					{{/ifEmptyObject}}
+				</select>
+			{{/ifCond}}
+
+			{{#ifCond type '==' 'radio'}}
+				<label for="select-choice-1" class="select">
+					{{{title}}}
+					{{#ifCond is_require '==' '1'}}<em>*</em>{{/ifCond}}
+				</label>
+				<select class="dynamic_options product_options {{#ifCond is_require '==' '1'}}required{{/ifCond}} type_radio" name="{{{title}}}" for="{{option_id}}">
+					<option value="" disabled>{{title}}</option>
+					{{#ifEmptyObject options}}
+						{{#options}}
+							<option value="{{option_type_id}}">
+								{{{title}}} 
+								{{#ifCond price '!=' 0}}
+									(+ {{FormatPrice price}})
+								{{/ifCond}}
+							</option>
+						{{/options}}
+					{{/ifEmptyObject}}
+				</select>
+			{{/ifCond}}
+
+			{{#ifCond type '==' 'checkbox'}}
+				<label for="select-choice-1" class="select">
+					{{{title}}}
+					{{#ifCond is_require '==' '1'}}<em>*</em>{{/ifCond}}
+				</label>
+				<select class="dynamic_options product_options {{#ifCond is_require '==' '1'}}required{{/ifCond}} type_checkbox" name="{{{title}}}" for="{{option_id}}" multiple="multiple">
+					<option value="" disabled>{{title}}</option>
+					{{#ifEmptyObject options}}
+						{{#options}}
+							<option value="{{option_type_id}}">
+								{{{title}}} 
+								{{#ifCond price '!=' 0}}
+									(+ {{FormatPrice price}})
+								{{/ifCond}}
+							</option>
+						{{/options}}
+					{{/ifEmptyObject}}
+				</select>
+			{{/ifCond}}
+
+			{{#ifCond type '==' 'field'}}
+				<label for="text-basic">
+					{{{title}}}
+					{{#ifCond is_require '==' '1'}}<em>*</em>{{/ifCond}}
+					&nbsp;
+					{{#ifCond price '!=' 0}}
+						${{MathFunc 0 '+' price}}
+					{{/ifCond}}
+				</label>
+				<input type="text" class="dynamic_options product_options {{#ifCond is_require '==' '1'}}required{{/ifCond}} type_text" name="{{{title}}}" placeholder="{{{title}}}" for="{{option_id}}" {{#ifCond max_characters '!=' 0}} maxlength="{{max_characters}}" {{/ifCond}} />
+		 		{{#ifCond max_characters '!=' 0}}
+					Maximum number of characters: {{max_characters}}
+				{{/ifCond}}
+			{{/ifCond}}
+
+			{{#ifCond type '==' 'area'}}
+				<label for="text-basic">
+					{{{title}}}
+					{{#ifCond is_require '==' '1'}}<em>*</em>{{/ifCond}}
+					&nbsp;
+					{{#ifCond price '!=' 0}}
+						${{MathFunc 0 '+' price}}
+					{{/ifCond}}
+				</label>
+				<input type="text" class="dynamic_options product_options {{#ifCond is_require '==' '1'}}required{{/ifCond}} type_area" name="{{{title}}}" placeholder="{{{title}}}" for="{{option_id}}" {{#ifCond max_characters '!=' 0}} maxlength="{{max_characters}}" {{/ifCond}} />
+				{{#ifCond max_characters '!=' 0}}
+					Maximum number of characters: {{max_characters}}
+				{{/ifCond}}
+			{{/ifCond}}
+
+			{{#ifCond type '==' 'date'}}
+				<label for="text-basic">
+					{{{title}}}
+					{{#ifCond is_require '==' '1'}}<em>*</em>{{/ifCond}}
+				</label>
+				<input type="date" class="dynamic_options product_options {{#ifCond is_require '==' '1'}}required{{/ifCond}} type_date" name="{{{title}}}" placeholder="{{{title}}}" for="{{option_id}}" />
+			{{/ifCond}}
+
+			{{#ifCond type '==' 'date_time'}}
+				<label for="text-basic">
+					{{{title}}}
+					{{#ifCond is_require '==' '1'}}<em>*</em>{{/ifCond}}
+				</label>
+				<input type="date" class="dynamic_options product_options {{#ifCond is_require '==' '1'}}required{{/ifCond}} type_date_time" name="{{{title}}}" placeholder="{{{title}}}" for="{{option_id}}" />
+			{{/ifCond}}
+
+			{{#ifCond type '==' 'time'}}
+				<label for="text-basic">
+					{{{title}}}
+					{{#ifCond is_require '==' '1'}}<em>*</em>{{/ifCond}}
+				</label>
+				<input type="date" class="dynamic_options product_options {{#ifCond is_require '==' '1'}}required{{/ifCond}} type_time" name="{{{title}}}" placeholder="{{{title}}}" for="{{option_id}}" />
+			{{/ifCond}}
+
+		{{/product_options}}
+	{{/if}}
+</script>

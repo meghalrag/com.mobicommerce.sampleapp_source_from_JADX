@@ -1,0 +1,75 @@
+<script id="h_billing_form" type="text/x-handlebars-template">
+	<div class="form_in">
+		<h4 class="text-center">{{{GetLanguageTranslation 'Billing_Address'}}}</h4>
+
+		<label for="billing_address_id">{{{GetLanguageTranslation 'Select_a_billing_address_from_your_address_book_or_enter_a_new_address'}}}<em>*</em></label>
+		<select name="billing_address_id" id="billing_address_id" onchange="app.functions.showhide_checkout_address_area(this.value, 'div_new_billing_address')">
+			{{#ifEmptyObject unique_addresses}}
+				{{#each unique_addresses}}
+					<option value="{{id}}">{{fullname}}, {{region}}, {{country}}</option>
+				{{/each}}
+			{{/ifEmptyObject}}
+			<option value="">{{{GetLanguageTranslation 'New_Address'}}}</option>
+		</select>
+
+		{{#ifEmptyObject unique_addresses}}
+			<div class="div_new_billing_address dhide">
+		{{else}}
+			<div class="div_new_billing_address dshow">
+		{{/ifEmptyObject}}
+		
+			<label for="billing_firstname">{{{GetLanguageTranslation 'First_name'}}}<em>*</em></label>
+			<input type="text" name="billing_firstname" id="billing_firstname" value="{{billing_firstname}}">
+			
+			<label for="billing_lastname">{{{GetLanguageTranslation 'Last_name'}}}<em>*</em></label>
+			<input type="text" name="billing_lastname" id="billing_lastname" value="{{billing_lastname}}">
+
+			<label for="billing_company">{{{GetLanguageTranslation 'Company'}}}</label>
+			<input type="text" name="billing_company" id="billing_company" value="{{billing_company}}">
+
+			<label for="billing_city">{{{GetLanguageTranslation 'City'}}}<em>*</em></label>
+			<input type="text" name="billing_city" id="billing_city" value="{{billing_city}}">
+
+			<label for="billing_state" class="select">{{{GetLanguageTranslation 'State'}}}<em>*</em></label>
+			<div id="textbox_dropdown_billing_state">
+				{{#if billing_states}}
+					{{#ifEmptyObject billing_states}}
+						<select name="billing_state" id="billing_state">
+							{{#billing_states}}
+								<option value="{{region_id}}" {{#ifCond region_id '==' ../billing_region_id}}selected="selected"{{/ifCond}}>{{name}}</option>
+							{{/billing_states}}
+						</select>
+					{{else}}
+						<input type="text" name="billing_state" id="billing_state" value="{{billing_state}}">		
+					{{/ifEmptyObject}}
+				{{else}}
+					<input type="text" name="billing_state" id="billing_state" value="{{billing_state}}">
+				{{/if}}
+			</div>
+
+			<label for="billing_country" class="select">{{{GetLanguageTranslation 'Country'}}}<em>*</em></label>
+			<select name="billing_country" id="billing_country" data-theme="a" onchange="app.functions.check_country_state_exists(this, 'textbox_dropdown_billing_state', 'billing_state')">
+				<option value="">-- {{{GetLanguageTranslation 'select'}}} --</option>
+				{{#if countries}}
+					{{#countries}}
+						<option value="{{iso2}}" {{#ifCond iso2 '==' ../billing_country}} selected="selected" {{/ifCond}}>{{name}}</option>
+					{{/countries}}
+				{{/if}}
+			</select>
+
+			<label for="billing_street">{{{GetLanguageTranslation 'Billing_street'}}}<em>*</em></label>
+			<textarea cols="40" rows="8" name="billing_street" id="billing_street">{{billing_street}}</textarea>
+
+			<label for="billing_postcode">{{{GetLanguageTranslation 'Postcode'}}}<em>*</em></label>
+			<input type="text" name="billing_postcode" id="billing_postcode" value="{{billing_postcode}}">
+
+			<label for="billing_telephone">{{{GetLanguageTranslation 'Telephone'}}}<em>*</em></label>
+			<input type="text" name="billing_telephone" id="billing_telephone" value="{{billing_telephone}}">
+		</div>
+	</div>
+
+	<div class="form_in">
+		<input type="checkbox" onclick="app.functions.same_as_billing(this, 'shipping_form');"checked="checked" id="billing_same_checkout">
+		<label for="billing_same_checkout">{{{GetLanguageTranslation 'Same_as_billing'}}}</label>
+	</div>
+</script>

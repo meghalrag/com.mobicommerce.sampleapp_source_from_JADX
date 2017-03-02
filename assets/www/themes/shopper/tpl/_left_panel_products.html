@@ -1,0 +1,25 @@
+<script id="h_left_panel_products" type="text/x-handlebars-template">
+	<div data-role="panel" id="products_left_panel" class="left-panel small">
+		<div class="leftpanel-container">
+			<ul class="panel-menu">
+				<li><a href="javascript:void(0);" onclick="app.user.module.redirectToUserModule();" class="icon-profile"></a></li>
+				<li><a href="javascript:void(0);" onclick="app.cms.redirectToCmsPage();" class="icon-info"></a></li>
+				
+				{{#CheckUserSession}}
+					<li><a href="javascript:void(0);" onclick="app.user.logout();" class="icon-logout"></a></li>
+				{{else}}
+					<li><a href="javascript:void(0);" onclick="app.user.redirectToLoginPage();" class="icon-login"></a></li>
+				{{/CheckUserSession}}
+			</ul>
+			<div class="panel-product-scroll">
+				<ul class="panel-breadcrumb">
+					<li><a href="javascript:void(0)">Shopping Products</a></li>
+				</ul>
+				<div class="panel-product-scroll-inner">
+					{{LeftPanelProductsSingleView this}}
+					{{ShowMoreLoader 'javascript:app.product.detail.loadNextPage()'}}
+				</div>
+			</div>
+		</div>
+	</div>
+</script>

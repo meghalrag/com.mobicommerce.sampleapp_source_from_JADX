@@ -1,0 +1,100 @@
+<script id="h_order_detail" type="text/x-handlebars-template">
+	<div data-role="header" class="topbar" >
+		<a href="#" class="ui-btn ui-btn-left ui-icon-myicon ui-btn-icon-notext icon-back" data-rel="back">back</a>
+		<h1>{{{GetLanguageTranslation 'Order_Detail'}}}</h1>
+		<div class="cart-buble">{{cart_bubble}}</div>
+		<a href="javascript:app.home.redirectToIndexPage();" class="ui-btn ui-btn-right ui-icon-myicon ui-btn-icon-notext icon-home">home</a>
+		<a href="javascript:app.cart.redirectToCartPage();" class="ui-btn ui-btn-right ui-icon-myicon ui-btn-icon-notext icon-cart">cart</a>
+	</div>
+	<div data-role="main" class="ui-content">
+		<div class="main-box">
+			{{PageLoader}}
+			<div>
+				{{#ifEmptyObject order_detail}}
+					{{#order_detail}}
+						<ul class="list-00 shopping-cart-list orderhistory-list orderhistory-detail">
+          					<li> 
+            					<div class="product-detail">
+              						<h4><strong>{{{GetLanguageTranslation 'Order_Number'}}}:</strong> {{order_code}}</h4>
+              						<h4><strong>{{{GetLanguageTranslation 'Order_Date'}}}:</strong> {{ConvertDateFormat order_date}}</h4>
+              						<h4><strong>{{{GetLanguageTranslation 'Payment_Method'}}}:</strong> {{payment_method}}</h4>
+              						<h4><strong>{{{GetLanguageTranslation 'Shipping_Method'}}}:</strong> {{shipping_method}}</h4>
+              						{{#if shippingAddress}}
+              							<h4><strong>{{{GetLanguageTranslation 'Shipping_Address'}}}:</strong></h4>
+              							{{#shippingAddress}}
+              								<p class="color-light">{{name}} {{street}}, {{city}} {{#if zip}} - {{zip}}, {{/if}} {{state_name}}, {{country_name}}</p>
+              								<br />
+              							{{/shippingAddress}}
+              						{{/if}}
+            						{{#if billingAddress}}
+              							<h4><strong>{{{GetLanguageTranslation 'Billing_Address'}}}:</strong></h4>
+              							{{#billingAddress}}
+              								<p class="color-light">{{name}} {{street}}, {{city}} {{#if zip}} - {{zip}}, {{/if}} {{state_name}}, {{country_name}}</p>
+              								<br />
+              							{{/billingAddress}}
+              						{{/if}}
+            					</div>
+             				</li>
+        				</ul>
+        				<h3>{{{GetLanguageTranslation 'Ordered_Items'}}}</h3>
+        				<ul class="list-00 shopping-cart-list">
+        					{{#ifEmptyObject order_items}}
+        						{{#order_items}}
+        							<li>
+										<div class="product-image" style="background-image:url('{{product_image}}')"><img src="images/product_list_image.png"></div>
+										<div class="product-detail">
+											<h4>{{product_name}}</h4>
+											{{#if options}}
+												{{#ifEmptyObject options}}
+													{{#each options}}
+														<p>
+															<strong>{{{option_title}}}:</strong> {{{option_value}}}{{#if @last}}{{else}},{{/if}}
+														</p>
+													{{/each}}
+												{{/ifEmptyObject}}
+											{{/if}}
+											<p class="cost-line"><span class="color-warning">{{FormatPrice product_price}}</span></p>
+										</div>
+									</li>
+        						{{/order_items}}
+        					{{/ifEmptyObject}}
+						</ul>
+                        <div class="shopping-cart-total">
+							<div class="text-line">
+								<span class="left color-light">{{{GetLanguageTranslation 'Subtotal'}}}</span>
+								<span class="right color-primary">{{FormatPrice order_subtotal}}</span>
+							</div>
+							{{#ifCond tax '!=' 0}}
+								<div class="text-line">
+									<span class="left color-light">{{{GetLanguageTranslation 'Tax'}}}</span>
+									<span class="right color-primary">{{FormatPrice tax}}</span>
+								</div>
+							{{/ifCond}}
+							{{#ifCond discount '!=' 0}}
+								<div class="text-line">
+									<span class="left color-light">{{{GetLanguageTranslation 'Discount'}}}</span>
+									<span class="right color-primary">- {{FormatPrice discount}}</span>
+								</div>
+							{{/ifCond}}
+							{{#if shipping_method}}
+								<div class="text-line">
+									<span class="left color-light">{{{GetLanguageTranslation 'Shipping_and_Handling'}}}({{{shipping_method}}})</span>
+									<span class="right color-primary">{{FormatPrice s_fee}}</span>
+								</div>
+							{{/if}}
+							<hr>
+							<div class="text-line">
+								<span class="left color-light">{{{GetLanguageTranslation 'Grand_Total'}}}</span>
+								<span class="right color-primary">{{FormatPrice order_total}}</span>
+							</div>
+						</div>
+					{{/order_detail}}
+				{{else}}
+					<li class="no-product-page no-product-icon">
+						<div>{{{GetLanguageTranslation 'We_are_sorry_No_orders_found'}}}</div>
+					</li>
+				{{/ifEmptyObject}}
+			</div>
+		</div>
+	</div>
+</script>

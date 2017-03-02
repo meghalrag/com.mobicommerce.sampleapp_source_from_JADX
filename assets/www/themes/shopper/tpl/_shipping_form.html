@@ -1,0 +1,70 @@
+<script id="h_shipping_form" type="text/x-handlebars-template">					
+	<div class="form_in shipping_form" style="display: none">
+		<h4 class="text-center">{{{GetLanguageTranslation 'Shipping_street'}}}</h4>
+		
+		<label for="shipping_address_id">{{{GetLanguageTranslation 'Select_a_shipping_address_from_your_address_book_or_enter_a_new_address'}}}<em>*</em></label>
+		<select name="shipping_address_id" id="shipping_address_id" onchange="app.functions.showhide_checkout_address_area(this.value, 'div_new_shipping_address')">
+			{{#ifEmptyObject unique_addresses}}
+				{{#each unique_addresses}}
+					<option value="{{id}}">{{fullname}}, {{region}}, {{country}}</option>
+				{{/each}}
+			{{/ifEmptyObject}}
+			<option value="">{{{GetLanguageTranslation 'New_Address'}}}</option>
+		</select>
+
+		{{#ifEmptyObject unique_addresses}}
+			<div class="div_new_shipping_address dhide">
+		{{else}}
+			<div class="div_new_shipping_address dshow">
+		{{/ifEmptyObject}}
+
+			<label for="shipping_firstname">{{{GetLanguageTranslation 'First_name'}}}<em>*</em></label>
+			<input type="text" name="shipping_firstname" id="shipping_firstname" value="{{shipping_firstname}}">
+			
+			<label for="shipping_lastname">{{{GetLanguageTranslation 'Last_name'}}}<em>*</em></label>
+			<input type="text" name="shipping_lastname" id="shipping_lastname" value="{{shipping_lastname}}">
+
+			<label for="shipping_company">{{{GetLanguageTranslation 'Company'}}}</label>
+			<input type="text" name="shipping_company" id="shipping_company" value="{{shipping_company}}">
+
+			<label for="shipping_city">{{{GetLanguageTranslation 'City'}}}<em>*</em></label>
+			<input type="text" name="shipping_city" id="shipping_city" value="{{shipping_city}}">
+
+			<label for="shipping_state" class="select">{{{GetLanguageTranslation 'State'}}}<em>*</em></label>
+			<div id="textbox_dropdown_shipping_state">
+				{{#if shipping_states}}
+					{{#ifEmptyObject shipping_states}}
+						<select name="shipping_state" id="shipping_state">
+							{{#shipping_states}}
+								<option value="{{region_id}}" {{#ifCond region_id '==' ../shipping_region_id}}selected="selected"{{/ifCond}}>{{name}}</option>
+							{{/shipping_states}}
+						</select>
+					{{else}}
+						<input type="text" name="shipping_state" id="shipping_state" value="{{shipping_state}}">		
+					{{/ifEmptyObject}}
+				{{else}}
+					<input type="text" name="shipping_state" id="shipping_state" value="{{shipping_state}}">
+				{{/if}}
+			</div>
+
+			<label for="shipping_country" class="select">{{{GetLanguageTranslation 'Country'}}}<em>*</em></label>
+			<select name="shipping_country" id="shipping_country" data-theme="a" onchange="app.functions.check_country_state_exists(this, 'textbox_dropdown_shipping_state', 'shipping_state')">
+				<option value="">-- {{{GetLanguageTranslation 'select'}}} --</option>
+				{{#if countries}}
+					{{#countries}}
+						<option value="{{iso2}}" {{#ifCond iso2 '==' ../shipping_country}} selected="selected" {{/ifCond}}>{{name}}</option>
+					{{/countries}}
+				{{/if}}
+			</select>
+
+			<label for="shipping_street">{{{GetLanguageTranslation 'Shipping_street'}}}<em>*</em></label>
+			<textarea cols="40" rows="8" name="shipping_street" id="shipping_street" placeholder="Shpping street">{{shipping_street}}</textarea>
+
+			<label for="shipping_postcode">{{{GetLanguageTranslation 'Postcode'}}}<em>*</em></label>
+			<input type="text" name="shipping_postcode" id="shipping_postcode" value="{{shipping_postcode}}">
+
+			<label for="shipping_telephone">{{{GetLanguageTranslation 'Telephone'}}}<em>*</em></label>
+			<input type="text" name="shipping_telephone" id="shipping_telephone" value="{{shipping_telephone}}">
+		</div>
+	</div>
+</script>

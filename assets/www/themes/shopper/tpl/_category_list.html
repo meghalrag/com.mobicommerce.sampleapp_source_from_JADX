@@ -1,0 +1,32 @@
+<script id="h_category_list" type="text/x-handlebars-template">
+	{{CategoryHomeLeftPanel this}}
+	<div data-role="header" class="topbar">
+		<a href="#home_panel" class="ui-btn ui-btn-left ui-icon-myicon ui-btn-icon-notext icon-menu">menu</a>
+		<a href="javascript:void(0);" onclick="app.search.redirectToSearchPage();" class="ui-btn ui-btn-left ui-icon-myicon ui-btn-icon-notext icon-search" data-role="button" role="button">Search</a>
+		<h1>{{{GetLanguageTranslation 'List_Page'}}}</h1>
+		<a href="javascript:app.home.redirectToIndexPage();" class="ui-btn ui-btn-right ui-icon-myicon ui-btn-icon-notext icon-home">home</a>
+		<div class="cart-buble">{{cart_bubble}}</div>
+		<a href="javascript:app.cart.redirectToCartPage();" class="ui-btn ui-btn-right ui-icon-myicon ui-btn-icon-notext icon-cart">cart</a>
+	</div>
+	<div data-role="main" class="ui-content">
+		<div class="main-box">
+			<div class="list-menu">
+				<ul data-role="listview" class="">
+					{{#if categories}}
+						{{#ifEmptyObject categories}}
+							{{#categories}}
+								<li>
+									<a href="#" onclick="{{#if children}} app.category.goto_child_categories('{{category_id}}', 'none'); {{else}} app.category.goto_products('{{category_id}}'); {{/if}}">
+										{{name}}
+									</a>
+								</li>
+							{{/categories}}
+						{{/ifEmptyObject}}
+					{{else}}
+						<li><a href="javascript:void(0)">{{{GetLanguageTranslation 'Oops_There_are_no_categories_to_display'}}}</a></li>
+					{{/if}}
+				</ul>
+			</div>
+		</div>
+	</div>
+</script>

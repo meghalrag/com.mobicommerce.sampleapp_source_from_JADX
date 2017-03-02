@@ -1,0 +1,24 @@
+<script id="h_downloadable_product_options" type="text/x-handlebars-template">
+
+	{{#ifEmptyObject sample_links}}
+		<label for="" class="select">Sample Links:</label>
+		{{#each sample_links}}
+			<a href="javascript:void(0)" onclick="{{#ifCond sample_type '==' 'file'}} app.functions.inappopen('downloadable/download/sample/sample_id/{{sample_id}}', '1'); {{else}} app.functions.inappopen('{{sample_url}}');{{/ifCond}}">{{default_title}}</a>{{#if @last}}{{else}}, {{/if}}
+		{{/each}}
+	{{/ifEmptyObject}}
+
+	<label for="" class="select">Downloadable link:</label>
+	<select class="dynamic_options required product_downloadable_links" name="product_downloadable_links" for="product_downloadable_links" multiple="multiple">
+		<option value="" disabled>Choose an option</option>
+		{{#if link}}
+			{{#link}}
+				<option value="{{link_id}}">
+					{{{title}}}
+					{{#if price}}
+						(+ {{price}})
+					{{/if}}
+				</option>
+			{{/link}}
+		{{/if}}
+	</select>
+</script>

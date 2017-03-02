@@ -1,0 +1,24 @@
+<script id="h_login" type="text/x-handlebars-template">
+	<div data-role="header" class="topbar" >
+		<a href="#" class="ui-btn ui-btn-left ui-icon-myicon ui-btn-icon-notext icon-back" data-rel="back">back</a>
+		<h1>{{{GetLanguageTranslation 'Login'}}}</h1>
+		<a href="javascript:app.home.redirectToIndexPage();" class="ui-btn ui-btn-right ui-icon-myicon ui-btn-icon-notext icon-home">home</a>
+		<div class="cart-buble">{{cart_bubble}}</div>
+		<a href="javascript:app.cart.redirectToCartPage();" class="ui-btn ui-btn-right ui-icon-myicon ui-btn-icon-notext icon-cart">cart</a>
+	</div>
+	<div data-role="main" class="ui-content">
+		<div class="main-box">
+			{{PageLoader}}
+			<div>
+				<p class="text-center">{{{GetLanguageTranslation 'Enter_your_username_password_to_get_access'}}}</p>
+				<form onsubmit="return false;">
+					<input type="text" name="user_name" id="login_username" value="" placeholder="{{{GetLanguageTranslation 'Username'}}}">
+					<input type="password" name="pasword" id="login_password" value="" placeholder="{{{GetLanguageTranslation 'Password'}}}">
+					<a href="javascript:void(0);" onclick="javascript:app.user.login.check_login()" class="ui-btn ui-btn-a">{{{GetLanguageTranslation 'Login'}}}</a>
+					<a href="javascript:void(0);" onclick="app.redirectFunction('signup.html');" class="ui-btn ui-btn-a">{{{GetLanguageTranslation 'Sign_Up'}}}</a>
+					<a href="javascript:void(0);" onclick="app.redirectFunction('forgot_password.html');" class="ui-btn ui-btn-a">{{{GetLanguageTranslation 'Forgot_Password'}}}</a>
+				</form>
+			</div>
+		</div>
+	</div>
+</script>

@@ -1,0 +1,61 @@
+<script id="h_category_home_left_panel" type="text/x-handlebars-template">
+	<div data-role="panel" id="home_panel" class="left-panel">
+		<div class="leftpanel-container">
+			<ul class="panel-menu">
+				<li><a href="javascript:void(0);" onclick="app.user.module.redirectToUserModule();" class="icon-profile"></a></li>
+				<li><a href="javascript:void(0);" onclick="app.cms.redirectToCmsPage();" class="icon-info"></a></li>
+				
+				{{#CheckUserSession}}
+					<li><a href="javascript:void(0);" onclick="app.user.logout();" class="icon-logout"></a></li>
+				{{else}}
+					<li><a href="javascript:void(0);" onclick="app.user.redirectToLoginPage();" class="icon-login"></a></li>
+				{{/CheckUserSession}}
+			</ul>
+			{{#if three_level_categories}}
+				<div>
+					<ul class="panel-breadcrumb">
+						<li><a href="javascript:void(0)">{{{GetLanguageTranslation 'Shopping_Category'}}}</a></li>
+					</ul>
+					<ul class="panel-list">
+						{{#if three_level_categories}}
+							{{#ifEmptyObject three_level_categories}}
+								{{#three_level_categories}}
+									<li class="header" onclick="{{#if children}} app.category.goto_child_categories('{{category_id}}', 'slide'); {{else}} app.category.goto_products('{{category_id}}'); {{/if}}">{{name}}</li>
+									{{#if children}}
+										{{#child}}
+											<li><a href="#" onclick="{{#if children}} toggle_three_column_left_category('{{category_id}}', 'slide'); {{else}} app.category.goto_products('{{category_id}}'); {{/if}}" class="{{#if children}}cat_parent{{/if}}">{{name}}</a>
+												{{#if children}}
+													<ul class="left_category_end_level_ul left_category_end_level_ul_{{category_id}}">
+														{{#child}}
+															<li>
+																<a href="#" onclick="{{#if children}} app.category.goto_child_categories('{{category_id}}', 'slide'); {{else}} app.category.goto_products('{{category_id}}'); {{/if}}">{{name}}
+																</a>
+															</li>
+														{{/child}}
+													</ul>
+												{{/if}}
+											</li>
+										{{/child}}
+									{{/if}}
+								{{/three_level_categories}}
+							{{/ifEmptyObject}}
+						{{else}}
+							<li><a href="javascript:void(0)">{{{GetLanguageTranslation 'Oops_There_are_no_categories_to_display'}}}</a></li>
+						{{/if}}
+					</ul>
+				</div>
+			{{/if}}
+		</div>
+	</div>
+
+	<script type="text/javascript">
+		var active_page_object = app.functions.get_active_page_object();
+		var screenheight_home = $(window).height();
+		var homemenu_home = $(active_page_object).find(".home-menu").height();
+
+		$(active_page_object).find("#home_panel").height(screenheight_home);
+		var panel_menu = $(active_page_object).find(".panel-menu").height();
+		var panel_breadcrumb = $(active_page_object).find(".panel-breadcrumb").height();
+		$(active_page_object).find("#home_panel .panel-list").height( screenheight_home - panel_menu - panel_breadcrumb );
+	<{{!}}/script>
+</script>

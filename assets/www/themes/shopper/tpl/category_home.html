@@ -1,0 +1,67 @@
+<script id="category_home" type="text/x-handlebars-template">
+	{{CategoryHomeLeftPanel this}}
+	<div data-role="header" class="topbar" >
+		<a href="#home_panel" class="ui-btn ui-btn-left ui-icon-myicon ui-btn-icon-notext icon-menu">menu</a>
+		<a href="javascript:void(0);" onclick="app.search.redirectToSearchPage();" class="ui-btn ui-btn-left ui-icon-myicon ui-btn-icon-notext icon-search" data-role="button" role="button">Search</a>
+		<h1>{{{GetLanguageTranslation 'Home'}}}</h1>
+		<div class="cart-buble">{{cart_bubble}}</div>
+		<a href="javascript:app.home.redirectToIndexPage();" class="ui-btn ui-btn-right ui-icon-myicon ui-btn-icon-notext icon-home">home</a>
+		<a href="javascript:app.cart.redirectToCartPage();" class="ui-btn ui-btn-right ui-icon-myicon ui-btn-icon-notext icon-cart">cart</a>
+	</div>
+	<div data-role="main" class="ui-content">
+		<div class="main-box">
+			{{PageLoader}}
+
+			{{#if categories}}
+				<div>
+					<div class="home-banner">
+						<div class="swiper-container">
+							<div class="swiper-wrapper">
+								{{#if homedata}}
+									{{#homedata}}
+										{{#if banners}}
+											{{#ifEmptyObject banners}}
+												{{#banners}}
+													<div class="swiper-slide">
+														<img src="{{this}}" alt="home banner">
+													</div>
+												{{/banners}}
+											{{/ifEmptyObject}}
+										{{/if}}
+									{{/homedata}}
+								{{/if}}
+							</div>
+						</div>
+						<div class="pagination"></div>
+					</div>
+					<div class="home-menu">
+						<ul data-role="listview" class="">
+							{{CategoryListLi this}}
+						</ul>
+					</div>
+				</div>
+			{{/if}}
+		</div>
+	</div>
+	
+	<!--<div data-role="footer" data-position="fixed" style="display:none">-->
+		<div id="deviceready" style="display: none">
+			<div class="listening"></div>
+			<div class="received"></div>
+		</div>
+		<!--<button id="buyNowBtn" onclick="app_paypal.onPayClick();"> Buy Now !</button>-->
+	<!--</div>-->
+
+	<script type="text/javascript">
+		var active_page_object = app.functions.get_active_page_object();
+		app.functions.category_left_panel_init_scroll();
+
+		$(active_page_object).one("pageshow",function() {
+			app.functions.category_left_panel_init_scroll();
+		});
+
+		$(active_page_object).one("pagehide",function() {
+			app.functions.category_left_panel_init_scroll();
+		});
+	</script>
+</script>

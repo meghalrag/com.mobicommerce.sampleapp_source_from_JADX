@@ -1,0 +1,19 @@
+<script id="h_product_options" type="text/x-handlebars-template">
+	{{#if options}}
+		{{#ifEmptyObject options.product_super_attributes}}
+			{{ConfigurableProductOptions options}}		
+		{{/ifEmptyObject}}
+		{{#ifEmptyObject options.bundle}}
+			{{BundleProductOptions options}}		
+		{{/ifEmptyObject}}
+		{{#ifEmptyObject options.super_group}}
+			{{GroupProductOptions options}}		
+		{{/ifEmptyObject}}
+		{{#ifEmptyObject options.link}}
+			{{DownloadableProductOptions options}}		
+		{{/ifEmptyObject}}
+		{{#ifEmptyObject options.product_options}}
+			{{SimpleProductOptions options}}		
+		{{/ifEmptyObject}}
+	{{/if}}
+</script>

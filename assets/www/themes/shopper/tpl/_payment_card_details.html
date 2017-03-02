@@ -1,0 +1,74 @@
+<script id="h_payment_card_details" type="text/x-handlebars-template">
+	<div data-role="header" class="topbar" >
+    	<a href="#" class="ui-btn ui-btn-left ui-icon-myicon ui-btn-icon-notext icon-back" data-rel="back">back</a>
+    	<h1>{{{GetLanguageTranslation 'Credit_Card'}}}</h1>
+    	<a href="javascript:app.home.redirectToIndexPage();" class="ui-btn ui-btn-right ui-icon-myicon ui-btn-icon-notext icon-home">home</a>
+    </div>
+    <div data-role="main" class="ui-content">
+    	<div class="main-box">
+    		{{PageLoader}}
+    		<div>
+    			<form onsubmit="return false;">
+    				<label for="card_nameoncard">{{{GetLanguageTranslation 'Name_on_card'}}}<em>*</em></label>
+    				<input type="text" name="card_nameoncard" id="card_nameoncard" value="">
+    
+    				<label for="card_creditcardtype" class="select">{{{GetLanguageTranslation 'Credit_card_type'}}}<em>*</em></label>
+    				<select name="card_creditcardtype" id="card_creditcardtype" data-theme="a">
+    					{{#if cc_types}}
+    						{{#each cc_types}}
+							    <option value="{{@key}}">{{this}}</option>
+							{{/each}}
+    					{{/if}}
+    				</select>
+
+    				<label for="card_creditcardnumber">{{{GetLanguageTranslation 'Credit_card_number'}}}<em>*</em></label>
+    				<input type="text" name="card_creditcardnumber" id="card_creditcardnumber" value="">
+    
+    				<label for="card_expirymonth" class="select">{{{GetLanguageTranslation 'Expiration_Date'}}}<em>*</em></label>
+    				<select name="card_expirymonth" id="card_expirymonth" data-theme="a">
+    					<option value="-1">{{{GetLanguageTranslation 'Month'}}}</option>
+    					<option value="01">Jan</option>
+    					<option value="02">Feb</option>
+    					<option value="03">Mar</option>
+    					<option value="04">Apr</option>
+    					<option value="05">May</option>
+    					<option value="06">Jun</option>
+					    <option value="07">Jul</option>
+					    <option value="08">Aug</option>
+					    <option value="09">Sep</option>
+					    <option value="10">Oct</option>
+					    <option value="11">Nov</option>
+					    <option value="12">Dec</option>
+					</select>
+					<select name="card_expiryyear" id="card_expiryyear" data-theme="a">
+ 						<option value="-1">{{{GetLanguageTranslation 'Year'}}}</option>
+					    <option value="2012">2012</option>
+					    <option value="2013">2013</option>
+					    <option value="2014">2014</option>
+					    <option value="2015">2015</option>
+					    <option value="2016">2016</option>
+					    <option value="2017">2017</option>
+					    <option value="2018">2018</option>
+					    <option value="2019">2019</option>
+					    <option value="2020">2020</option>
+					    <option value="2021">2021</option>
+					    <option value="2022">2022</option>
+					    <option value="2023">2023</option>
+					    <option value="2024">2024</option>
+					    <option value="2025">2025</option>
+					    <option value="2026">2026</option>
+					    <option value="2027">2027</option>
+					    <option value="2028">2028</option>
+					    <option value="2029">2029</option>
+					    <option value="2030">2030</option>
+					</select>
+
+					<label for="card_cccid">{{{GetLanguageTranslation 'Card_Verification_Number'}}}<em>*</em></label>
+    				<input type="text" name="card_cccid" id="card_cccid" value="">
+
+				    <a href="javascript:app.checkout.payment.make_payment();" class="ui-btn ui-btn-c">{{{GetLanguageTranslation 'Continue'}}}</a>
+    			</form>
+    		</div>
+    	</div>
+    </div>
+</script>

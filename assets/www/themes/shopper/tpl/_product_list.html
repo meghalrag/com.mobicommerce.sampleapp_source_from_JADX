@@ -1,0 +1,41 @@
+<script id="h_product_list" type="text/x-handlebars-template">
+	{{CategoryHomeLeftPanel this}}
+	<div data-role="header" class="topbar">
+		<a href="#home_panel" class="ui-btn ui-btn-left ui-icon-myicon ui-btn-icon-notext icon-menu">menu</a>
+		<a href="javascript:void(0);" onclick="app.search.redirectToSearchPage();" class="ui-btn ui-btn-left ui-icon-myicon ui-btn-icon-notext icon-search" data-role="button" role="button">Search</a>
+		<h1>{{{GetLanguageTranslation 'Product_List'}}}</h1>
+		<a href="javascript:app.home.redirectToIndexPage();" class="ui-btn ui-btn-right ui-icon-myicon ui-btn-icon-notext icon-home">home</a>
+		<div class="cart-buble">{{cart_bubble}}</div>
+		<a href="javascript:app.cart.redirectToCartPage();" class="ui-btn ui-btn-right ui-icon-myicon ui-btn-icon-notext icon-cart">cart</a>
+	</div>
+	<div data-role="main" class="ui-content">
+		<div class="main-box">
+			{{PageLoader}}
+
+			{{#if products}}
+				{{#ifEmptyObject products}}
+					<form class="theme-search" onsubmit="return false;">
+						<div class="listing-style-button">
+							<a href="javascript:void(0);" onclick="app.product.changePageColumn('1');" class="icon-list a_product_list_columns a_product_list_column_one active "></a>
+							<a href="javascript:void(0);" onclick="app.product.changePageColumn('2');" class="icon-gride a_product_list_columns a_product_list_column_two "></a>
+						</div>
+						<div class="searchresult-text"><strong>{{products_count}}</strong> {{{GetLanguageTranslation 'products_found'}}}</div>
+					</form>
+				{{/ifEmptyObject}}
+			{{/if}}
+			
+			<div id="product_list_dynamic_column" class="list-cont-wrap">
+				{{ProductOneColumn this}}
+			</div>
+			
+			{{ShowMoreLoader 'javascript:app.product.loadNextPage()'}}
+		</div>
+	</div>
+	<script type="text/javascript">
+		var active_page_object = app.functions.get_active_page_object();
+
+		$(active_page_object).find('.a_product_list_columns').click(function(){
+			$(this).addClass('active').siblings().removeClass('active');
+		});
+	</script> 
+</script>

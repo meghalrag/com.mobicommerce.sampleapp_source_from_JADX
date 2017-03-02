@@ -1,0 +1,19 @@
+<script id="h_order_success" type="text/x-handlebars-template">
+	<div data-role="header" class="topbar" >
+    	<h1>{{{GetLanguageTranslation 'Order_Success'}}}</h1>
+        <a href="javascript:app.home.redirectToIndexPage();" class="ui-btn ui-btn-right ui-icon-myicon ui-btn-icon-notext icon-home">home</a>
+    </div>
+    <div data-role="main" class="ui-content">
+    	<div class="main-box">
+    		<div>
+                {{{GetLanguageTranslation 'Thank_you_for_your_purchase'}}}
+                <br />
+    			Your order id is {{order_id}}
+                <br /><br />
+                {{{GetLanguageTranslation 'You_will_receive_an_order_confirmation_email_with_details_of_your_order_and_a_link_to_track_its_progress'}}}
+                <br /><br />
+                <button onclick="javascript:app.home.redirectToIndexPage();" class="ui-btn ui-btn-c ui-btn-icon-notext">{{{GetLanguageTranslation 'Continue_Shopping'}}}</button>
+    		</div>
+    	</div>
+    </div>
+</script>

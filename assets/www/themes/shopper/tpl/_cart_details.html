@@ -1,0 +1,113 @@
+<script id="h_cart_details" type="text/x-handlebars-template">
+	{{#if cart_items}}
+		{{#cart_items}}
+			{{#if items}}
+				<ul class="list-00 shopping-cart-list">
+					{{#items}}
+						<li>
+							<div class="product-image" style="background-image:url('{{product_thumbnail_url}}')">
+								<img src="../{{EchoThemeFolderName}}/images/product_list_image.png">
+							</div>
+							<div class="product-detail">
+								<h4>{{{name}}}</h4>
+
+								{{CartDisplayOptions this}}
+								
+								<p class="cost-line">
+									<span class="color-warning">{{FormatPrice price}}</span>
+								</p>
+								<div class="lbl-detal">
+									<div class="number-box">
+										<label>{{{GetLanguageTranslation 'QTY'}}}</label>
+										<div>
+											<button class="ui-btn ui-btn-b ui-icon-plus ui-btn-icon-notext" onclick="app.functions.add_cart_item_qty('item_qty_{{item_id}}');">delete</button>
+											<input type="text" class="cart_item_qty" name="item_qty_{{item_id}}" id="item_qty_{{item_id}}" value="{{qty}}">
+											<button class="ui-btn ui-btn-b ui-icon-minus ui-btn-icon-notext" onclick="app.functions.minus_cart_item_qty('item_qty_{{item_id}}');">delete</button>
+										</div>
+									</div>
+									<div class="number-box">
+										<label>{{{GetLanguageTranslation 'TOTAL'}}}</label>
+										<div>
+											<span class="text color-primary">{{FormatPrice row_total}}</span>
+										</div>
+									</div>
+									<div class="number-box">
+										<label> &nbsp; </label>
+										<div>
+											<button onclick="app.cart.remove_item('{{item_id}}');" class="ui-btn ui-btn-c ui-icon-delete ui-btn-icon-notext">delete</button>
+										</div>
+									</div>
+								</div>
+
+								{{#if hasError}}
+									{{#errorDescription}}
+										<div class="cart_error_message">
+											<p>{{message}}</p>
+										</div>	
+									{{/errorDescription}}
+								{{/if}}
+							</div>
+						</li>
+					{{/items}}
+				</ul>
+				<button onclick="app.cart.update_cart();" class="ui-btn ui-btn-c ui-btn-icon-notext">{{{GetLanguageTranslation 'Update_Cart'}}}</button>
+
+				<section class="box-border">
+					<h3>{{{GetLanguageTranslation 'Discount_Code'}}}</h3>
+					{{#if couponcode}}
+						<div class="ui-grid-a">
+							<div class="ui-block-a">
+								<div class="ui-input-text ui-body-inherit ui-corner-all ui-shadow-inset" style="line-height:22px; padding:.4em">{{couponcode}}</div>
+							</div>
+							<div class="ui-block-b"><a href="javascript:void(0);" onclick="app.cart.removeCouponCode();" class="ui-btn ui-btn-b">{{{GetLanguageTranslation 'Remove'}}}</a></div>
+						</div>
+					{{else}}
+						<div class="ui-grid-a">
+							<div class="ui-block-a">
+								<input type="text" name="couponcode" id="couponcode" value="" placeholder="{{{GetLanguageTranslation 'Discount_Code'}}}" style="line-height:23px;" >
+							</div>
+							<div class="ui-block-b"><a href="javascript:void(0);"  onclick="app.cart.applyCouponCode();" class="ui-btn ui-btn-b">{{{GetLanguageTranslation 'Apply'}}}</a></div>
+						</div>
+					{{/if}}
+					<hr>
+				</section>
+			
+				<div class="shopping-cart-total">
+					<div class="text-line">
+						<span class="left color-light">{{{GetLanguageTranslation 'Subtotal'}}}</span>
+						<span class="right color-primary">{{FormatPrice subtotal}}</span>
+					</div>
+					{{#if tax_amount}}
+						{{#ifCond tax_amount '!=' 0}}
+							<div class="text-line">
+								<span class="left color-light">{{{GetLanguageTranslation 'Tax'}}}</span>
+								<span class="right color-primary">{{FormatPrice tax_amount}}</span>
+							</div>
+						{{/ifCond}}
+					{{/if}}
+					{{#if discount_amount}}
+						{{#ifCond discount_amount '!=' 0}}
+							<div class="text-line">
+								<span class="left color-light">{{{GetLanguageTranslation 'Discount'}}}</span>
+								<span class="right color-primary">-{{FormatPrice discount_amount}}</span>
+							</div>
+						{{/ifCond}}
+					{{/if}}
+					<hr>
+					<div class="text-line">
+						<span class="left color-light">{{{GetLanguageTranslation 'Grand_Total'}}}</span>
+						<span class="right color-primary">{{FormatPrice grand_total}}</span>
+					</div>
+				</div>
+			{{else}}
+				<div class="no-product-page no-cart-icon">
+					<div>{{{GetLanguageTranslation 'The_shopping_cart_is_empty'}}}</div>
+				</div>		
+			{{/if}}
+		{{/cart_items}}
+	{{else}}
+		<div class="no-product-page no-cart-icon">
+			<div>{{{GetLanguageTranslation 'The_shopping_cart_is_empty'}}}</div>
+		</div>
+	{{/if}}
+</script>

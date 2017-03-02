@@ -1,0 +1,29 @@
+<script id="h_bundle_product_options" type="text/x-handlebars-template">
+	{{#if bundle}}
+		{{#bundle}}
+			<label for="{{option_id}}" class="select">
+				{{option_title}}
+				{{#ifCond required '==' '1'}}<em>*</em>{{/ifCond}}
+			</label>
+			<select class="dynamic_options product_bundle_attributes {{#ifCond required '==' '1'}}required{{/ifCond}} type_{{option_type}}" name="{{option_title}}" for="{{option_id}}" onchange="app.functions.bundle_dropdown_change(this);" {{#ifInArray option_type 'checkbox,multi'}}multiple{{/ifInArray}}>
+				{{#ifInArray option_type 'select,radio'}}
+					<option value="" disabled>Choose an option</option>
+				{{/ifInArray}}
+				{{#if options}}
+					{{#options}}
+						<option value="{{option_id}}" class="is_qty_changable_{{option_selection_can_change_qty}}" for="{{option_selection_qty}}">
+							{{#ifInArray ../option_type 'checkbox,multi'}}
+								{{FormatPrice option_selection_qty 0}} x 
+							{{/ifInArray}}
+							{{option_value}}
+							{{#ifCond option_price '!=' 0}}
+								(+ {{FormatPrice option_price}})
+							{{/ifCond}}
+						</option>
+					{{/options}}
+				{{/if}}
+			</select>
+			<input type="text" class="bundle_product_qty_{{option_id}}" readonly="readonly" value="1" {{#ifInArray option_type 'checkbox,multi'}}style="display: none"{{/ifInArray}} />
+		{{/bundle}}
+	{{/if}}
+</script>

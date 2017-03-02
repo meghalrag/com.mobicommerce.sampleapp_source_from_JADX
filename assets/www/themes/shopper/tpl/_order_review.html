@@ -1,0 +1,102 @@
+<script id="h_order_review" type="text/x-handlebars-template">
+	<div data-role="header" class="topbar" >
+		<a href="#" class="ui-btn ui-btn-left ui-icon-myicon ui-btn-icon-notext icon-back" data-rel="back">cart</a>
+		<h1>{{{GetLanguageTranslation 'Order_Review'}}}</h1>
+	</div>
+	<div data-role="main" class="ui-content">
+		<div class="main-box">
+			{{PageLoader}}
+			<div>
+				{{#if cart_items}}
+					{{#cart_items}}
+						{{#if items}}
+							<ul class="list-00 shopping-cart-list">
+								{{#items}}
+									<li>
+										<div class="product-image" style="background-image:url('{{product_thumbnail_url}}')">
+											<img src="../{{EchoThemeFolderName}}/images/product_list_image.png">
+										</div>
+										<div class="product-detail">
+											<h4>{{name}}</h4>
+
+											{{CartDisplayOptions this}}
+											
+											<p class="cost-line">
+												<span class="color-warning">
+													{{FormatPrice price}}
+												</span>
+											</p>
+											<div class="lbl-detal">
+												<div class="number-box">
+													<label>{{{GetLanguageTranslation 'QTY'}}}</label>
+													<div>
+														<label>{{qty}}</label>
+													</div>
+												</div>
+												<div class="number-box">
+													<label>{{{GetLanguageTranslation 'TOTAL'}}}</label>
+													<div>
+														<span class="text color-primary">
+															{{FormatPrice row_total}}
+														</span>
+													</div>
+												</div>
+											</div>
+										</div>
+									</li>
+								{{/items}}
+							</ul>
+							<div class="shopping-cart-total">
+								<div class="text-line">
+									<span class="left color-light">{{{GetLanguageTranslation 'Subtotal'}}}</span>
+									<span class="right color-primary">{{FormatPrice subtotal}}</span>
+								</div>
+								{{#if tax_amount}}
+									{{#ifCond tax_amount '!=' 0}}
+										<div class="text-line">
+											<span class="left color-light">{{{GetLanguageTranslation 'Tax'}}}</span>
+											<span class="right color-primary">{{FormatPrice tax_amount}}</span>
+										</div>
+									{{/ifCond}}
+								{{/if}}
+								{{#if discount_amount}}
+									{{#ifCond discount_amount '!=' 0}}
+										<div class="text-line">
+											<span class="left color-light">{{{GetLanguageTranslation 'Discount'}}}{{#if couponcode}} ({{{couponcode}}}){{/if}}</span>
+											<span class="right color-primary">-{{FormatPrice discount_amount}}</span>
+										</div>
+									{{/ifCond}}
+								{{/if}}
+								{{#if shipping_address}}
+									{{#shipping_address}}
+										<div class="text-line">
+											<span class="left color-light">
+												{{{GetLanguageTranslation 'Shipping_and_Handling'}}}
+												({{shipping_description}})
+											</span>
+											<span class="right color-primary">
+												{{FormatPrice shipping_amount}}
+											</span>
+										</div>
+									{{/shipping_address}}
+								{{/if}}
+								<hr>
+								<div class="text-line">
+									<span class="left color-light">{{{GetLanguageTranslation 'Grand_Total'}}}</span>
+									<span class="right color-primary">{{FormatPrice grand_total}}</span>
+								</div>
+							</div>
+						{{/if}}
+					{{/cart_items}}
+				{{/if}}
+			</div>
+
+			<div>
+				{{#if cart_items}}
+					{{Agreements this}}
+					<button onclick="app.checkout.order_review.confirm();" class="ui-btn ui-btn-c ui-btn-icon-notext">{{{GetLanguageTranslation 'Place_Order'}}}</button>
+				{{/if}}
+			</div>
+		</div>
+	</div>
+</script>

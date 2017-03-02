@@ -1,0 +1,26 @@
+<script id="h_billing_details" type="text/x-handlebars-template">
+	<div data-role="header" class="topbar">
+		<a href="#" onclick="javascript:app.cart.redirectToCartPage();" class="ui-btn ui-btn-left ui-icon-myicon ui-btn-icon-notext icon-back" data-rel="">cart</a>
+		<h1>{{{GetLanguageTranslation 'Shipping'}}}</h1>
+		<a href="javascript:app.home.redirectToIndexPage();" class="ui-btn ui-btn-right ui-icon-myicon ui-btn-icon-notext icon-home">home</a>
+	</div>
+	<div data-role="main" class="ui-content">
+		<div class="main-box">
+			{{PageLoader}}
+			<div>
+				<form onsubmit="return false;">
+					{{BillingForm this}}
+					{{ShippingForm this}}
+
+					<a href="javascript:app.checkout.billing_details.save();" class="ui-btn ui-btn-c">{{{GetLanguageTranslation 'Continue'}}}</a>
+				</form>
+			</div>
+		</div>
+	</div>
+
+	<script type="text/javascript">
+		$("#checkout_billing_details").one("pageshow",function() {
+			
+		});
+	</script>
+</script>

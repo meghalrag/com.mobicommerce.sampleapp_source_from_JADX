@@ -1,0 +1,19 @@
+<script id="h_left_panel_products_single_view" type="text/x-handlebars-template">
+	<ul class="panel-product" id="left_panel_products_single_list">
+		{{#if category_products}}
+			{{#ifEmptyObject category_products}}
+				{{#category_products}}
+					<li>
+						<a href="javascript:void(0)" onclick="app.redirectFunction('product_detail.html?product_id={{entity_id}}');">
+							<div class="panel-product-image" style="background-image:url('{{product_image_url}}');">
+								<img src="../{{EchoThemeFolderName}}/images/product_list_image.png" alt="thumb">
+							</div>
+							<span> {{name}}</span>
+						</a>
+						<a href="javascript:void(0);" class="wishlist-btn ui-link wishlist_product {{#CheckProductInWishlish entity_id}}active{{/CheckProductInWishlish}}" data-href="{{entity_id}}"></a>
+					</li>
+				{{/category_products}}
+			{{/ifEmptyObject}}
+		{{/if}}
+	</ul>
+</script>

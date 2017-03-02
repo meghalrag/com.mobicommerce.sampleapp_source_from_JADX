@@ -1,0 +1,34 @@
+<script id="h_search" type="text/x-handlebars-template">
+	<div data-role="header" class="topbar" >
+		<a href="#" class="ui-btn ui-btn-left ui-icon-myicon ui-btn-icon-notext icon-back" data-rel="back">back</a>
+		<h1>{{{GetLanguageTranslation 'Product_List'}}}</h1>
+		<a href="javascript:app.home.redirectToIndexPage();" class="ui-btn ui-btn-right ui-icon-myicon ui-btn-icon-notext icon-home">home</a>
+		<div class="cart-buble">{{cart_bubble}}</div>
+		<a href="javascript:app.cart.redirectToCartPage();" class="ui-btn ui-btn-right ui-icon-myicon ui-btn-icon-notext icon-cart">cart</a>
+	</div>
+	<div data-role="main" class="ui-content">
+		<div class="main-box">
+			{{PageLoader}}
+			{{#ifNotUndefinedObject products}}
+				<form class="theme-search" onsubmit="return false;">
+				    <input data-type="search" id="txtSearch" placeholder="{{{GetLanguageTranslation 'Search_Product'}}}" onchange="app.search.search(this.value);" value="{{term}}">
+				</form>
+				
+				<div>
+	                <ul class="list-00" id="searchullist">
+	                	{{SearchList this}}
+	               	</ul>
+	            </div>
+				
+				{{ShowMoreLoader 'javascript:app.search.loadNextPage()'}}
+			{{/ifNotUndefinedObject}}
+		</div>
+	</div>
+	<script type="text/javascript">
+		var active_page_object = app.functions.get_active_page_object();
+
+		$(active_page_object).find('.a_product_list_columns').click(function(){
+			$(this).addClass('active').siblings().removeClass('active');
+		});
+	</script> 
+</script>

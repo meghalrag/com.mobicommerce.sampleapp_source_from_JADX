@@ -1,0 +1,24 @@
+<script id="h_signup" type="text/x-handlebars-template">
+	<div data-role="header" class="topbar" >
+		<a href="#" class="ui-btn ui-btn-left ui-icon-myicon ui-btn-icon-notext icon-back" data-rel="back">back</a>
+		<h1>{{{GetLanguageTranslation 'Signup'}}}</h1>
+		<a href="javascript:app.home.redirectToIndexPage();" class="ui-btn ui-btn-right ui-icon-myicon ui-btn-icon-notext icon-home">home</a>
+		<div class="cart-buble">{{cart_bubble}}</div>
+		<a href="javascript:app.cart.redirectToCartPage();" class="ui-btn ui-btn-right ui-icon-myicon ui-btn-icon-notext icon-cart">cart</a>
+	</div>
+	<div data-role="main" class="ui-content">
+		<div class="main-box">
+			{{PageLoader}}
+			<div>
+				<p class="text-center">{{{GetLanguageTranslation 'Signup_Form'}}}</p>
+				<form onsubmit="return false;">
+			        <input type="text" name="singup_firstname" id="signup_firstname" value="" placeholder="{{{GetLanguageTranslation 'First_name'}}}">
+			        <input type="text" name="signup_lastname" id="signup_lastname" value=""placeholder="{{{GetLanguageTranslation 'Last_name'}}}">
+			        <input type="text" name="signup_email" id="signup_email" value="" placeholder="{{{GetLanguageTranslation 'Your_Email'}}}">
+			        <input type="password" name="signup_password" id="signup_password" value="" placeholder="{{{GetLanguageTranslation 'Password'}}}">
+			        <a href="javascript:void(0)" class="ui-btn ui-btn-b" onclick="app.user.signup.register();">{{{GetLanguageTranslation 'Submit'}}}</a>
+				</form>
+			</div>
+		</div>
+	</div>
+</script>
